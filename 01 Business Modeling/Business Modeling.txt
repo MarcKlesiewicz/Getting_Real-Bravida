@@ -1,0 +1,8 @@
+Indhold i Business Modeling:
+- Data dictionary (faglige udtryk bravida benytter i deres system og hvad de betyder)
+- Domain models (DOM)
+
+Domain model navnekonvention og filtype:
+DOM01 - Opret aftaleseddel
+Visio (vsdx)
+

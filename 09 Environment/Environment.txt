@@ -1,0 +1,9 @@
+Gitlab procedure/vejledning
+- Oprette og arbjede i branches
+- Add
+- Commit
+- Push
+- Rename
+- merge request
+- review og merge branches sammen
+Skabeloner
