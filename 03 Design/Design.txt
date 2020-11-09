@@ -1,0 +1,14 @@
+Indhold i Design:
+- Sekvens Diagram (SD)
+- Design Class Diagram (DCD)
+- Prototype
+
+Navnekonvention og filtype:
+
+Sekvens diagram
+SD01 - Opret Aftaleseddel
+Visio(vsdx)
+
+Design Class Diagram
+DCD(samlet)
+Visio(vsdx)

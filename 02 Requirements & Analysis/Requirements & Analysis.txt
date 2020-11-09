@@ -1,0 +1,22 @@
+Indhold i Requirements & Analysis:
+- BuisnessCase
+- FURPS
+- Usecase (UC)
+- System Sekvens Diagram (SSD)
+- Operations contract (OC)
+- Mockup
+
+
+Navnekonvention og filtype:
+
+Usecase
+UC01 - Opret Aftaleseddel
+Word (docs)
+
+System sekvens Diagram:
+SSD01 - Opret Aftaleseddel
+Visio (vsdx)
+
+Operations contract:
+OC01 - Opret Aftaleseddel
+Word (docs)

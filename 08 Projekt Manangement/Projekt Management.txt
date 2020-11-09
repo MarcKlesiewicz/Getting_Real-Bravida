@@ -1,0 +1,3 @@
+- Productbacklog, sprint/iterationsplan (link til trello)
+- Riskoanalyse
+- Kundemøder
