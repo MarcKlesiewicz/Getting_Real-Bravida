@@ -8,14 +8,23 @@ namespace GettingReal
     {
         private EntrepriseOversigt entrepriseOversigt = new EntrepriseOversigt();
 
-        public void OpretAftaleseddel()
+        public void OpretAftaleseddel(string overskift, string modtager, string tidsPåvirkning, string prisGrundlag, string arbejdsUdførelse)
         {
+            
             entrepriseOversigt.OpretAftaleseddel();
+
+
+            TilføjAftaleSeddelInformation(overskift, modtager, tidsPåvirkning, prisGrundlag, arbejdsUdførelse);
         }
 
         public List<Aftaleseddel> VisEntrepriseOversigt()
         {
-            return entrepriseOversigt.Vis();
+            
+            if (entrepriseOversigt.Vis().Count != 0)
+            {
+                return entrepriseOversigt.Vis();
+            }
+            throw new ArgumentException("Der er ikke oprettet nogen aftalesedler.");
 
         }
 

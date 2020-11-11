@@ -14,7 +14,7 @@ namespace GettingReal
 
         public int LøbeNr { get; set; }
 
-        public string Dato { get; set; }
+        public DateTime Dato { get; set; }
 
         public string ProjektNavn { get; set; }
 
@@ -28,7 +28,11 @@ namespace GettingReal
 
         public string Overskrift { get; set; }
 
-        public Aftaleseddel(int projekNr, string bygherre, string sted, string dato, int løbeNr, string projektNavn)
+        public string Reference { get; set; }
+
+        public string SvarSenest { get; set;  }
+
+        public Aftaleseddel(int projekNr, string bygherre, string sted, DateTime dato, int løbeNr, string projektNavn)
         {
             ProjektNr = projekNr;
             Bygherre = bygherre;

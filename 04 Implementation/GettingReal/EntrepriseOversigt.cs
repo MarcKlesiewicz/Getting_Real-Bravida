@@ -16,7 +16,7 @@ namespace GettingReal
 
         public int LøbeNr { get; set; }
 
-        public string Dato { get; set; }
+        public DateTime Dato { get; set; }
 
         public string Oprettelse { get; set; }
 
@@ -26,12 +26,24 @@ namespace GettingReal
 
         public void OpretAftaleseddel()
         {
+            LøbeNr = aftaleseddeler.Count + 1;
+            Bygherre = "John Hitler";
+            Sted= "Skærbæk";
+            Dato = DateTime.Now;
+            ProjektNavn = "SDU byggeri, Odense";
+
             valgtAftaleseddel = new Aftaleseddel(ProjektNr, Bygherre, Sted, Dato, LøbeNr, ProjektNavn);
+
+            aftaleseddeler.Add(valgtAftaleseddel);
 
         }
 
         public List<Aftaleseddel> Vis()
         {
+            if (aftaleseddeler == null)
+            {
+                throw new ArgumentException("Der er ikke oprettet nogen aftalesedler endnu");
+            }
             return aftaleseddeler;
 
         }
