@@ -7,40 +7,43 @@ namespace GettingReal
     {
         static void Main(string[] args)
         {
+            Menu menu = new Menu(); ;
             string prisGrundlag;
             Controller controller = new Controller();
             Aftaleseddel valgtaftaleseddel;
             int i = 1;
-            try
-            {
-                foreach (var aftaleseddel in controller.VisEntrepriseOversigt())
-                {
 
-                    Console.WriteLine(i + ": " + aftaleseddel.Overskrift);
-                    i++;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+
             bool ikkeILoop = true;
             while (ikkeILoop)
             {
-                
-                Console.WriteLine("\n Hvad vil du? \n 1. Oprette Ny AftaleSeddel \n 2. Vælge Aftaleseddel \n 3. Slette Aftaleseddel \n Skriv et tal fra 1-3 for at vælge i menuen");
-                int.TryParse(Console.ReadLine(), out int result);
-                switch (result)
+                menu.Show();
+                try
+                {
+                    foreach (var aftaleseddel in controller.VisEntrepriseOversigt())
+                    {
+
+                        Console.WriteLine(i + ": " + aftaleseddel.Overskrift);
+                        i++;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                Console.WriteLine("\n Hvad vil du? \n 1. Oprette Ny AftaleSeddel \n 2. Vælge Aftaleseddel \n 3. Slette Aftaleseddel \n Skriv et tal fra 1-3 for at vælge i menuen, eller tryk enter for lukke programmet");
+
+                switch (menu.SelectMenuItem(Console.ReadLine()))
                 {
                     case 1:
                         Console.WriteLine("Hvad er aftalesedlens overskrift??");
                         string aftalesedlensoverskrift = Console.ReadLine();
                         Console.WriteLine("Hvem er modtageren");
                         string modtager = Console.ReadLine();
-   
+
                         Console.WriteLine("Hvad er tidspåvirkningen?");
                         string tid = Console.ReadLine();
-                        Console.WriteLine("----\n Hvad er prisgrundlaget? \n 1. bygherreønske \n 2. Efterregning \n 3. projektændring");
+                        Console.WriteLine("----\n Hvad er prisgrundlaget? \n 1. Bygherreønske \n 2. Efterregning \n 3. projektændring");
                         string valg = Console.ReadLine();
                         if (valg == "1")
                         {
@@ -67,13 +70,15 @@ namespace GettingReal
                         Console.Clear();
                         break;
                     case 2:
+                        menu.Menuitem = Menu.MenuItems.Aftalesedler;
+
                         Console.WriteLine("Hvilken aftaleseddel ud fra menuen vælger du?");
                         for (int j = 0; j < controller.VisEntrepriseOversigt().Count; j++)
                         {
                             foreach (var item in controller.VisEntrepriseOversigt())
                             {
-                                Console.WriteLine(i+": " +item.Overskrift);
-                                
+                                Console.WriteLine(i + ": " + item.Overskrift);
+
                             }
                             if (int.TryParse(Console.ReadLine(), out int temp) == false)
                             {
@@ -83,20 +88,18 @@ namespace GettingReal
 
                             if (temp == i)
                             {
-                                valgtaftaleseddel =
-                                    controller.VælgAftaleseddel(controller.VisEntrepriseOversigt()[0].Overskrift);
-                                Console.Clear();
-                                Console.WriteLine(" \t ------Aftaleseddel----");
+                                valgtaftaleseddel = controller.VælgAftaleseddel(controller.VisEntrepriseOversigt()[0].Overskrift);
+                                menu.Show();
                                 Console.WriteLine(
-                                    $"Byggeherren: = {valgtaftaleseddel.Bygherre}, ProjektNavn: {valgtaftaleseddel.ProjektNavn}, Sted: {valgtaftaleseddel.Sted}, Modtager: {valgtaftaleseddel.Modtager}, Dato: {DateTime.Now} og  Løbenmr {valgtaftaleseddel.LøbeNr}");
+                                    $"Byggeherren: = {valgtaftaleseddel.Bygherre}, ProjektNavn: {valgtaftaleseddel.ProjektNavn}, Sted: {valgtaftaleseddel.Sted}, \n Modtager: {valgtaftaleseddel.Modtager}, Dato: {DateTime.Now} og  Løbenmr {valgtaftaleseddel.LøbeNr}");
                                 Console.WriteLine(
                                     $"\n ProjektNr. {valgtaftaleseddel.ProjektNr} Tidsplanspåvirkning: {valgtaftaleseddel.TidsPåvirkning}, Overskrift {valgtaftaleseddel.Overskrift}, Svar senest:  {valgtaftaleseddel.SvarSenest}, Ref Plan: {valgtaftaleseddel.Reference}");
 
                                 Console.WriteLine(" \n Tryk Enter for at forsætte");
                                 Console.ReadLine();
-                                Console.WriteLine("Vil du redigere noget i aftalesedlen? \n 1. Rediger Overskriften \n 2. Rediger ProjektModtager \n 3. Redigere i tidsplanen \n 4. Rediger i svar senest \n Redigere i reference planen");
+                                Console.WriteLine("Vil du redigere noget i aftalesedlen? \n 1. Rediger Overskriften \n 2. Rediger ProjektModtager \n 3. Redigere i tidsplanen \n 4. Rediger i svar senest \n 5. Redigere i arbejdsudførelsen \n Vælg fra 1-5. Skriv alt andet for at komme tilbage til forskærmen ");
                                 Console.WriteLine("Hvad vil du redigere?");
-                                string Redigere= Console.ReadLine();
+                                string Redigere = Console.ReadLine();
                                 Console.WriteLine("Hvad vil du redigere det til?");
                                 string RedigerTil = Console.ReadLine();
 
@@ -118,7 +121,7 @@ namespace GettingReal
                                         controller.RedigerAftaleseddel("ArbejdsUdførelse", RedigerTil);
                                         break;
                                     default:
-                                        Console.WriteLine("Du kan ikke finde ud af simple instruktioner");
+                                        menu.Menuitem = Menu.MenuItems.Entrepriseoversigt;
                                         break;
                                 }
                             }
@@ -126,24 +129,25 @@ namespace GettingReal
 
                         break;
                     case 3:
-                      
-                        for (int j = 0; j < controller.VisEntrepriseOversigt().Count; j++)
+                        Console.WriteLine("Hvilken aftaleseddel ud fra menuen vælger du?");
+                            
+                        if (int.TryParse(Console.ReadLine(), out int værdi) == false)
+                        {
+                            Console.WriteLine("Vælg en korrekt værdi");
+                            continue;
+                        }
+                        for (int j = 1; j < controller.VisEntrepriseOversigt().Count; j++)
                         {
                             foreach (var item in controller.VisEntrepriseOversigt())
                             {
-                                Console.WriteLine(i + ": " + item.Overskrift);
+                                Console.WriteLine(j + ": " + item.Overskrift);
 
                             }
-                            Console.WriteLine("Hvilken aftaleseddel ud fra menuen vælger du?");
-                            if (int.TryParse(Console.ReadLine(), out int temp) == false)
-                            {
-                                Console.WriteLine("Vælg en korrekt værdi");
-                                continue;
-                            }
+                            
 
-                            if (temp == i)
+                            if (værdi == j)
                             {
-                                controller.SletAftaleseddel(controller.VisEntrepriseOversigt()[i]);
+                                controller.SletAftaleseddel(controller.VisEntrepriseOversigt()[j-1]);
                             }
                         }
 
