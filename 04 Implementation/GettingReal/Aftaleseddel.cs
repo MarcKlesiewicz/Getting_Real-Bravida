@@ -41,5 +41,10 @@ namespace GettingReal
             LøbeNr = løbeNr;
             ProjektNavn = projektNavn;
         }
+        public override string ToString()
+        {
+            return $"{Overskrift} {Modtager} {TidsPåvirkning} {Prisgrundlag} {Arbejdsudførelse}";
+            // :)
+        }
     }
 }
