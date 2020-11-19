@@ -6,7 +6,7 @@ namespace GettingReal
     {
         static void Main(string[] args)
         {
-            Controller controller = new Controller();
+            Controller mainController = new Controller();
         }
     }
 }

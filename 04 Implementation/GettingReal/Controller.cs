@@ -8,6 +8,40 @@ namespace GettingReal
     {
         private EntrepriseOversigt entrepriseOversigt = new EntrepriseOversigt();
 
+        //Den lokale field objekt af ArbejdsbeskrivelseRepo der skal bruges til at kalde på metoderne under den klasse
+        private ArbejdsbeskrivelseRepo arbejdsbeskrivelseRepo = new ArbejdsbeskrivelseRepo();
+
+        //Metode til at oprette en ny arbejdsbeskrivelse
+        public void OpretArbejdsbeskrivelse()
+        {
+            arbejdsbeskrivelseRepo.OpretArbejdsbeskrivelse();
+        }
+
+        //Metode til at finde alle arbejdsbeskrivelser med et givent løbenummer
+        public List<Arbejdsbeskrivelse> VisArbejdsbeskrivelser(int løbeNr)
+        {
+            return arbejdsbeskrivelseRepo.FindArbejdsbeskrivelser(løbeNr);
+        }
+
+        //Metode til at ændre i en arbejdsbeskrivelse
+        public void TilføjArbejdsbeskrivelse(string parameter, string redigerTil)
+        {
+            switch (parameter)
+            {
+                case "Tekst":
+                    arbejdsbeskrivelseRepo.TilføjArbejdsbeskrivelse(redigerTil);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        //Metode til at slette den arbejdsbeskrivelse der i øjeblikket arbejdes med
+        public void SletArbejdsbeskrivelse()
+        {
+            arbejdsbeskrivelseRepo.SletArbejdsbeskrivelse();
+        }
+
         public void OpretAftaleseddel()
         {
             entrepriseOversigt.OpretAftaleseddel();
