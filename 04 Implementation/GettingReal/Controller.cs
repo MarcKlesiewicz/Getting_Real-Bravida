@@ -15,6 +15,7 @@ namespace GettingReal
         public void OpretArbejdsbeskrivelse()
         {
             arbejdsbeskrivelseRepo.OpretArbejdsbeskrivelse();
+            
         }
 
         //Metode til at finde alle arbejdsbeskrivelser med et givent løbenummer
@@ -108,10 +109,42 @@ namespace GettingReal
             }
             catch (ArgumentNullException e)
             {
+                Console.WriteLine(e.Message);
                 throw;
             }
             
         }
 
+        public double RedigerArbejdsbeskrivelse(string parameter)
+        {
+            double temp = 0;
+            try
+            {
+
+                if (int.TryParse(parameter, out int antal))
+                {
+                    arbejdsbeskrivelseRepo.redigerArbejdsbeskrivelse(antal);
+                }
+
+                else if (double.TryParse(parameter, out double enhedsPris))
+                {
+                    temp = arbejdsbeskrivelseRepo.redigerArbejdsbeskrivelse(enhedsPris);
+                }
+                else
+                {
+                    arbejdsbeskrivelseRepo.redigerArbejdsbeskrivelse(parameter);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+            return temp; 
+            
+            
+
+            
+        }
     }
 }
