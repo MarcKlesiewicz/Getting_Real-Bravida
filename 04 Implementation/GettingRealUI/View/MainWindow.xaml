@@ -10,7 +10,7 @@
         <Viewbox>
             
         
-        <Grid>
+        <Grid Height="1080" Width="1920" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -99,7 +99,7 @@
                 <TextBlock Background="#D8CF0E" />
             </StackPanel>
 
-                <ListBox Grid.Row ="3" Grid.ColumnSpan="10" Grid.RowSpan="5" BorderThickness="3" Height="550">
+                <ListBox Grid.Row ="3" Grid.ColumnSpan="10" Grid.RowSpan="5" BorderThickness="3" >
                 <ListBoxItem>
                     <StackPanel Orientation="Horizontal">
                         <TextBox Text="1" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="150" TextAlignment="Center" IsReadOnly="True"/>
