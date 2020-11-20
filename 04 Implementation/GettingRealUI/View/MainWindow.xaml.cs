@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GettingRealUI.ViewModel;
 
-namespace GettingRealUI
+namespace GettingRealUI.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -22,7 +23,13 @@ namespace GettingRealUI
     {
         public MainWindow()
         {
+            DataContext = new MainViewModel();
             InitializeComponent();
+        }
+
+        private void Opret_knap_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

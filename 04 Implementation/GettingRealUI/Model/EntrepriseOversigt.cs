@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GettingReal
+namespace GettingRealUI.Model
 {
     public class EntrepriseOversigt
     {

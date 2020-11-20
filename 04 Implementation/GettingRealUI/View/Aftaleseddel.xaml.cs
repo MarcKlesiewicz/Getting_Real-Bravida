@@ -9,15 +9,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using GettingRealUI.ViewModel;
+using GettingRealUI.Model;
 
-namespace GettingRealUI
+namespace GettingRealUI.View
 {
     /// <summary>
     /// Interaction logic for Aftaleseddel.xaml
     /// </summary>
     public partial class Aftaleseddel : Window
     {
-        public Aftaleseddel()
+        public Aftaleseddel(Model.Aftaleseddel aftaleseddel)
         {
             InitializeComponent();
         }
