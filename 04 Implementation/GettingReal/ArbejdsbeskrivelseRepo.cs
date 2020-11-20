@@ -94,5 +94,18 @@ namespace GettingReal
             }
             return tempList;
         }
+
+        public void deaktiveretAftaleseddel()
+        {
+            if (valgteArbejdsbeskrivelse != null)
+            {
+                valgteArbejdsbeskrivelse.Aktiveret = false;
+            }
+            else
+            {
+                throw new ArgumentNullException("Der er ikke valgt en arbejdsbeskrivelse.");
+            }
+        }
+
     }
 }
