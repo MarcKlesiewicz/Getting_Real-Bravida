@@ -74,6 +74,11 @@ namespace GettingReal
             valgteArbejdsbeskrivelse.Tekst = tekst;
         }
 
+        public void TilføjLøbenummer(int løbenr)
+        {
+            valgteArbejdsbeskrivelse.LøbeNr = løbenr;
+        }
+
         //Metode til at slette den arbejdsbeskrivelse der i øjeblikket håndteres
         public void SletArbejdsbeskrivelse()
         {

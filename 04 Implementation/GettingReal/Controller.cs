@@ -31,6 +31,9 @@ namespace GettingReal
                 case "Tekst":
                     arbejdsbeskrivelseRepo.TilføjArbejdsbeskrivelse(redigerTil);
                     break;
+                case "Løbenr":
+                    arbejdsbeskrivelseRepo.TilføjLøbenummer(int.Parse(redigerTil));
+                    break;
                 default:
                     break;
             }
