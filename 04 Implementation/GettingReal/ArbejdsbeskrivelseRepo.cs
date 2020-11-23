@@ -95,7 +95,7 @@ namespace GettingReal
             return tempList;
         }
 
-        public void deaktiveretAftaleseddel()
+        public void deaktiveretArbejdsbeskrivelse()
         {
             if (valgteArbejdsbeskrivelse != null)
             {

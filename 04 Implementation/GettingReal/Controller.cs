@@ -103,15 +103,8 @@ namespace GettingReal
         public void DeaktiverArbejdsbeskrivelse()
         {
             // Laver en try catch, i det tilfælde der ikke er valgt en arbejdsbeskrivelse
-            try
-            {
-                arbejdsbeskrivelseRepo.deaktiveretAftaleseddel();
-            }
-            catch (ArgumentNullException e)
-            {
-                Console.WriteLine(e.Message);
-                throw;
-            }
+       
+                arbejdsbeskrivelseRepo.deaktiveretArbejdsbeskrivelse();
 
         }
 
