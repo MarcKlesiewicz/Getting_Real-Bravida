@@ -5,9 +5,9 @@ using GettingRealUI.Model;
 
 namespace GettingRealUI.ViewModel
 {
-    class AftleseddelViewModel
+    class AftaleseddelViewModel
     {
-        private Aftaleseddel aftaleseddel;
+        private Model.Aftaleseddel aftaleseddel;
         public string Bygherre { get; set; }
 
         public int ProjektNr { get; set; }
@@ -30,7 +30,7 @@ namespace GettingRealUI.ViewModel
 
         public string Overskrift { get; set; }
 
-        public AftleseddelViewModel(Aftaleseddel aftaleseddel)
+        public AftaleseddelViewModel(Model.Aftaleseddel aftaleseddel)
         {
             this.aftaleseddel = aftaleseddel;
             Bygherre = aftaleseddel.Bygherre;
@@ -43,6 +43,7 @@ namespace GettingRealUI.ViewModel
             TidsPåvirkning = aftaleseddel.TidsPåvirkning;
             Prisgrundlag = aftaleseddel.Prisgrundlag;
             Overskrift = aftaleseddel.Overskrift;
+           
         }
     }
 

@@ -21,15 +21,23 @@ namespace GettingRealUI.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel mvm;
         public MainWindow()
         {
-            DataContext = new MainViewModel();
+            
             InitializeComponent();
+            mvm = new MainViewModel();
+            DataContext = mvm;
         }
+
+        
+        
 
         private void Opret_knap_Click(object sender, RoutedEventArgs e)
         {
             
+            Aftaleseddel aftaleseddelWindow = new Aftaleseddel(mvm.OpretAftaleseddel());
+            aftaleseddelWindow.Show();
         }
     }
 }

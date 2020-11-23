@@ -50,13 +50,13 @@
             <Label HorizontalAlignment="Left"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
                 <StackPanel >
                     <TextBlock Text="Projektnavn" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-                    <TextBox x:Name="Projektnavn" Text="Wildcat" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" />
+                    <TextBox x:Name="Projektnavn" Text="{Binding ProjektNavn, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" />
                 </StackPanel>
             </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
                 <StackPanel >
                     <TextBlock Text="ProjektNummer" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-                    <TextBox x:Name="ProjektNummer" Text="2" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+                    <TextBox x:Name="ProjektNummer" Text="{Binding ProjektNr, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                 </StackPanel>
             </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
@@ -64,7 +64,7 @@
                     <TextBlock Text="Sted" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
 				
 					<!--Sted-->
-					<TextBox x:Name="Sted" Text="Odense" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+					<TextBox x:Name="Sted" Text="{Binding Sted, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                 </StackPanel>
             </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
@@ -72,7 +72,7 @@
                     <TextBlock Text="Oprettet af" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
 
 					<!--Oprettet af-->
-					<TextBox x:Name="OprettetAf" Text="Dan" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+					<TextBox x:Name="OprettetAf" Text="{Binding Oprettelse, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                 </StackPanel>
             </Label>
             <Label HorizontalAlignment="Left" Grid.Column="9" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="180" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
@@ -80,7 +80,7 @@
                     <TextBlock Text="Løbenr/Mærkning" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
                   
 					<!--LøbeNr-->
-					<TextBox x:Name="LøbeNr" Text="1" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+					<TextBox x:Name="LøbeNr" Text="{Binding LøbeNr, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                 </StackPanel>
             </Label>
 			
@@ -89,7 +89,7 @@
                     <TextBlock Text="Dato" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
                    
 					<!--Dato-->
-					<TextBox x:Name="Dato" Text="17/11/2020" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+					<TextBox x:Name="Dato" Text="{Binding Dato, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                 </StackPanel>
             </Label>
 
@@ -109,16 +109,19 @@
                 <TextBlock Background="#D8CF0E" />
             </StackPanel>
 
-                <ListBox x:Name="ListBoxAftaleSeddel" Grid.Row ="3" Grid.ColumnSpan="10" Grid.RowSpan="5" BorderThickness="3" >
-                <ListBoxItem>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox Text="1" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="150" TextAlignment="Center" IsReadOnly="True"/>
-                        <TextBox Text="Overskift" FontSize="20"   BorderThickness="2" BorderBrush="Black" Width="900" IsReadOnly="True"/>
-                        <TextBox Text="Ikke Godkendt" FontSize="20"  BorderThickness="2" BorderBrush="Black" Width="200" TextAlignment="Center" IsReadOnly="True"/>
-                        <TextBox Text="54" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right" IsReadOnly="True"/>
-                        <TextBox Text="100" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="300" TextAlignment="Right" IsReadOnly="True"/>
-                    </StackPanel>
-                </ListBoxItem>
+                <ListBox x:Name="ListBoxAftaleSeddel" Grid.Row ="3" Grid.ColumnSpan="10" Grid.RowSpan="5" BorderThickness="3" ItemsSource="{Binding Aftaleseddels}" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Text="{Binding LøbeNr}" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="150" TextAlignment="Center" IsReadOnly="True"/>
+                                <TextBox Text="{Binding Overskrift}" FontSize="20"   BorderThickness="2" BorderBrush="Black" Width="900" IsReadOnly="True"/>
+                                <TextBox Text="" FontSize="20"  BorderThickness="2" BorderBrush="Black" Width="200" TextAlignment="Center" IsReadOnly="True"/>
+                                <TextBox Text="" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right" IsReadOnly="True"/>
+                                <TextBox Text="" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="300" TextAlignment="Right" IsReadOnly="True"/>
+                                <Button Content="VIS" Width="50" FontWeight="Bold" Margin="5,0,0,0"/>
+                            </StackPanel> 
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
                 <!--Deaktiver knap-->
                 <Button x:Name="Deaktiver_Knap" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" Content="DEAKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200" Margin="0,30,0,0" BorderThickness="2" Foreground="#00618B"/>

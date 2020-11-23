@@ -19,9 +19,13 @@ namespace GettingRealUI.View
     /// </summary>
     public partial class Aftaleseddel : Window
     {
+        private AftaleseddelViewModel aftaleseddelViewModel;
+
         public Aftaleseddel(Model.Aftaleseddel aftaleseddel)
         {
             InitializeComponent();
+            aftaleseddelViewModel = new AftaleseddelViewModel(aftaleseddel);
+            DataContext = aftaleseddelViewModel;
         }
     }
 }

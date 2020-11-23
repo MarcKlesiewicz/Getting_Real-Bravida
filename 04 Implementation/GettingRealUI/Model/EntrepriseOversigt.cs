@@ -6,27 +6,27 @@ namespace GettingRealUI.Model
 {
     public class EntrepriseOversigt
     {
-        public string ProjektNavn { get; set; }
+        public string ProjektNavn { get; set; } = "heje";
 
-        public string Bygherre { get; set; }
+        public string Bygherre { get; set; } = "Dan";
 
-        public int ProjektNr { get; set; }
+        public int ProjektNr { get; set; } = 1;
 
-        public string Sted { get; set; }
+        public string Sted { get; set; } = "odense";
 
-        public int LøbeNr { get; set; }
+        public int LøbeNr { get; set; } = 1;
 
-        public string Dato { get; set; }
+        public string Dato { get; set; } = "1/1";
 
-        public string Oprettelse { get; set; }
+        public string Oprettelse { get; set; } = "Dan";
 
-        private List<Aftaleseddel> aftaleseddeler = new List<Aftaleseddel>();
+        private List<Aftaleseddel> aftaleseddeler = new List<Aftaleseddel>() { new Aftaleseddel(2, "dan", "odense", "21/21", 1, "hallo"), new Aftaleseddel(2, "dan", "odense", "21/21", 2, "hallo") };
+        public Aftaleseddel valgtAftaleseddel { get; private set; }
 
-        private Aftaleseddel valgtAftaleseddel;
-
-        public void OpretAftaleseddel()
+        public Aftaleseddel OpretAftaleseddel()
         {
             valgtAftaleseddel = new Aftaleseddel(ProjektNr, Bygherre, Sted, Dato, LøbeNr, ProjektNavn);
+            return valgtAftaleseddel;
 
         }
 
