@@ -8,6 +8,14 @@ namespace GettingReal
     {
         private EntrepriseOversigt entrepriseOversigt = new EntrepriseOversigt();
 
+        private Arbejdsbeskrivelse valgtArbejdsbeskrivelse;
+
+        public Arbejdsbeskrivelse ValgtArbejdsbeskrivelse
+        {
+            get { return arbejdsbeskrivelseRepo.ValgteArbejdsbeskrivelse; }
+            set { arbejdsbeskrivelseRepo.ValgteArbejdsbeskrivelse = value; }
+        }
+
         //Den lokale field objekt af ArbejdsbeskrivelseRepo der skal bruges til at kalde på metoderne under den klasse
         private ArbejdsbeskrivelseRepo arbejdsbeskrivelseRepo = new ArbejdsbeskrivelseRepo();
 
@@ -15,7 +23,7 @@ namespace GettingReal
         public void OpretArbejdsbeskrivelse()
         {
             arbejdsbeskrivelseRepo.OpretArbejdsbeskrivelse();
-            
+
         }
 
         //Metode til at finde alle arbejdsbeskrivelser med et givent løbenummer
@@ -72,7 +80,7 @@ namespace GettingReal
         public Aftaleseddel TilføjAftaleSeddelInformation(string overskift, string modtager, string tidsPåvirkning, string prisGrundlag, string arbejdsUdførelse)
         {
             return entrepriseOversigt.TilføjAftaleSeddelInformation(overskift, modtager, tidsPåvirkning, prisGrundlag, arbejdsUdførelse);
-            
+
         }
 
         public void RedigerAftaleseddel(string parameter, string redigerTil)
@@ -102,49 +110,27 @@ namespace GettingReal
 
         public void DeaktiverArbejdsbeskrivelse()
         {
-            // Laver en try catch, i det tilfælde der ikke er valgt en arbejdsbeskrivelse
-            try
-            {
-                arbejdsbeskrivelseRepo.deaktiveretAftaleseddel();
-            }
-            catch (ArgumentNullException e)
-            {
-                Console.WriteLine(e.Message);
-                throw;
-            }
-            
+            arbejdsbeskrivelseRepo.DeaktiveretAftaleseddel();
         }
 
-        public double RedigerArbejdsbeskrivelse(string parameter)
+        public void RedigerArbejdsbeskrivelse(string parameter)
         {
-            double temp = 0;
-            try
-            {
+            arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(parameter);
 
-                if (int.TryParse(parameter, out int antal))
-                {
-                    arbejdsbeskrivelseRepo.redigerArbejdsbeskrivelse(antal);
-                }
-
-                else if (double.TryParse(parameter, out double enhedsPris))
-                {
-                    temp = arbejdsbeskrivelseRepo.redigerArbejdsbeskrivelse(enhedsPris);
-                }
-                else
-                {
-                    arbejdsbeskrivelseRepo.redigerArbejdsbeskrivelse(parameter);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                throw;
-            }
-            return temp; 
-            
-            
-
-            
         }
+        public void RedigerArbejdsbeskrivelse(int antal)
+        {
+            arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(antal);
+
+        }
+        public void RedigerArbejdsbeskrivelse(double enhedsPris)
+        {
+            arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(enhedsPris);
+        }
+        public void VælgArbejdsbeskrivelse(int ID)
+        {
+            arbejdsbeskrivelseRepo.VælgArbejdsbeskrivelse(ID);
+        }
+
     }
 }

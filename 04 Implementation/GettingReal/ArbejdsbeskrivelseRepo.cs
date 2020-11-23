@@ -6,11 +6,22 @@ namespace GettingReal
 {
     public class ArbejdsbeskrivelseRepo
     {
+        
         //Listen over alle arbejdsbeskrivelser i hele systemet
         private List<Arbejdsbeskrivelse> _arbejdsbeskrivelser = new List<Arbejdsbeskrivelse>();
 
+       
+
         //Det lokale field til at håndtere hvilken arbejdsbeskrivelse der i øjeblikket arbejds med
         private Arbejdsbeskrivelse valgteArbejdsbeskrivelse = null;
+
+        public Arbejdsbeskrivelse ValgteArbejdsbeskrivelse
+        {
+            get { return valgteArbejdsbeskrivelse; }
+            set { valgteArbejdsbeskrivelse = value; }
+        }
+
+
 
         //En privat metode til at finde ud af hvilket ID der ikke er taget, ud fra de allerede eksisterende arbejdsbeskrivelser
         //Hvis alle ID'er, mellem 0 til mængden af arbejdsbeskrivelser, er taget. Så returnerer den det næste frie tal.
@@ -95,7 +106,7 @@ namespace GettingReal
             return tempList;
         }
 
-        public void deaktiveretAftaleseddel()
+        public void DeaktiveretAftaleseddel()
         {
             if (valgteArbejdsbeskrivelse != null)
             {
