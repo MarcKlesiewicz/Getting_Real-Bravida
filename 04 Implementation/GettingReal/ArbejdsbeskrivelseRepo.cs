@@ -127,6 +127,7 @@ namespace GettingReal
         }
         public int RedigerArbejdsbeskrivelse(int antal)
         {
+            //Fjerner en nullexceptionen da der skal være valgt en arbejdsbeskrivelse
             if (valgteArbejdsbeskrivelse != null)
             {
                 valgteArbejdsbeskrivelse.Antal = antal;
