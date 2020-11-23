@@ -122,7 +122,8 @@ namespace GettingReal
                 valgteArbejdsbeskrivelse.EnhedsPris = enhedsPris;
                 return enhedsPris;
             }
-            
+
+            return null;
         }
         public int RedigerArbejdsbeskrivelse(int antal)
         {
@@ -132,7 +133,7 @@ namespace GettingReal
                 return antal;
             }
 
-            return;
+            return null;
         }
     }
 }
