@@ -101,10 +101,7 @@ namespace GettingReal
             {
                 valgteArbejdsbeskrivelse.Aktiveret = false;
             }
-            else
-            {
-                throw new ArgumentNullException("Der er ikke valgt en arbejdsbeskrivelse.");
-            }
+           
         }
 
         public string RedigerArbejdsbeskrivelse(string tekst)
@@ -112,39 +109,30 @@ namespace GettingReal
             if (valgteArbejdsbeskrivelse != null)
             {
                 valgteArbejdsbeskrivelse.Tekst = tekst;
-            }
-            else
-            {
-                throw new ArgumentNullException("Der er ikke valgt en arbejdsbeskrivelse.");
+                return tekst;
             }
 
-            return tekst;
+            return null;
+
         }
         public double RedigerArbejdsbeskrivelse(double enhedsPris)
         {
             if (valgteArbejdsbeskrivelse != null)
             {
                 valgteArbejdsbeskrivelse.EnhedsPris = enhedsPris;
+                return enhedsPris;
             }
-            else
-            {
-                throw new ArgumentNullException("Der er ikke valgt en arbejdsbeskrivelse.");
-            }
-
-            return enhedsPris;
+            
         }
         public int RedigerArbejdsbeskrivelse(int antal)
         {
             if (valgteArbejdsbeskrivelse != null)
             {
                 valgteArbejdsbeskrivelse.Antal = antal;
-            }
-            else
-            {
-                throw new ArgumentNullException("Der er ikke valgt en arbejdsbeskrivelse.");
+                return antal;
             }
 
-            return antal;
+            return;
         }
     }
 }
