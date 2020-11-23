@@ -123,7 +123,7 @@ namespace GettingReal
                 return enhedsPris;
             }
 
-            return null;
+            return 0.0;
         }
         public int RedigerArbejdsbeskrivelse(int antal)
         {
@@ -133,7 +133,7 @@ namespace GettingReal
                 return antal;
             }
 
-            return null;
+            return 0;
         }
     }
 }
