@@ -131,30 +131,6 @@ namespace GettingReal
             arbejdsbeskrivelseRepo.VælgArbejdsbeskrivelse(ID);
         }
 
-        //double temp = 0;
-        //try
-        //{
-
-        //    if (int.TryParse(parameter, out int antal))
-        //    {
-        //        arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(antal);
-        //    }
-
-        //    else if (double.TryParse(parameter, out double enhedsPris))
-        //    {
-        //        temp = arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(enhedsPris);
-        //    }
-        //    else
-        //    {
-        //        arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(parameter);
-        //    }
-        //}
-        //catch (Exception e)
-        //{
-        //    Console.WriteLine(e.Message);
-        //    throw;
-        //}
-        //return temp; 
     }
 }
 
