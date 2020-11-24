@@ -12,7 +12,7 @@ namespace GettingReal
 
         public string  Sted { get; set; }
 
-        public int LøbeNr { get; set; }
+        public int LøbeNr { get; }
 
         public string Dato { get; set; }
 
@@ -28,14 +28,14 @@ namespace GettingReal
 
         public string Overskrift { get; set; }
 
-        public Aftaleseddel(int projekNr, string bygherre, string sted, string dato, int løbeNr, string projektNavn)
+        public Aftaleseddel(int projekNr, string bygherre, string sted, string dato, string projektNavn, int løbenr)
         {
             ProjektNr = projekNr;
             Bygherre = bygherre;
             Sted = sted;
             Dato = dato;
-            LøbeNr = løbeNr;
             ProjektNavn = projektNavn;
+            LøbeNr = løbenr;
         }
 
         public override string ToString()

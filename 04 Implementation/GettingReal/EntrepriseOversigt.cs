@@ -26,7 +26,7 @@ namespace GettingReal
 
         public void OpretAftaleseddel()
         {
-            valgtAftaleseddel = new Aftaleseddel(ProjektNr, Bygherre, Sted, Dato, LøbeNr, ProjektNavn);
+            valgtAftaleseddel = new Aftaleseddel(ProjektNr, Bygherre, Sted, Dato, ProjektNavn, (aftaleseddeler.Count + 1));
 
         }
 
