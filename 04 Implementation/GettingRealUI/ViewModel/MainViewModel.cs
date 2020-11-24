@@ -45,5 +45,39 @@ namespace GettingRealUI.ViewModel
         {
             return entrepriseOversigt.OpretAftaleseddel();
         }
+
+        public Aftaleseddel VælgAftaleseddel(string overskift)
+        {
+            return entrepriseOversigt.VælgAftaleseddel(overskift);
+        }
+
+        public void RedigerAftaleseddel(string parameter, string redigerTil)
+        {
+            switch (parameter)
+            {
+                case "Overskrift":
+                    entrepriseOversigt.RedigerOverskift(redigerTil);
+                    break;
+                case "Modtager":
+                    entrepriseOversigt.RedigerModtager(redigerTil);
+                    break;
+                case "Tidspåvirkning":
+                    entrepriseOversigt.RedigerTidspåvirkning(redigerTil);
+                    break;
+                case "PrisGrundlag":
+                    entrepriseOversigt.RedigerPrisGrundlag(redigerTil);
+                    break;
+                case "ArbejdsUdførelse":
+                    entrepriseOversigt.RedigerArbejdsUdførelse(redigerTil);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        public void sætaftaleseddel(Aftaleseddel aftaleseddel)
+        {
+            entrepriseOversigt.sætaftaleseddel(aftaleseddel);
+        }
     }
 }

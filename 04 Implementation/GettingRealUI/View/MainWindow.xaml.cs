@@ -24,20 +24,38 @@ namespace GettingRealUI.View
         private MainViewModel mvm;
         public MainWindow()
         {
-            
+
             InitializeComponent();
             mvm = new MainViewModel();
             DataContext = mvm;
         }
 
-        
-        
+
+
 
         private void Opret_knap_Click(object sender, RoutedEventArgs e)
         {
-            
             Aftaleseddel aftaleseddelWindow = new Aftaleseddel(mvm.OpretAftaleseddel());
             aftaleseddelWindow.Show();
+        }
+
+        private void VisAftaleSeddel_Click(object sender, RoutedEventArgs e)
+        {
+            if (ListBoxAftaleSeddel.SelectedItem is Model.Aftaleseddel)
+            {
+                Model.Aftaleseddel temp = (Model.Aftaleseddel)ListBoxAftaleSeddel.SelectedItem;
+                Aftaleseddel aftaleseddelWindow = new Aftaleseddel(temp);
+                if (aftaleseddelWindow.ShowDialog().Value)
+                {
+                    mvm.sætaftaleseddel(temp);
+                    if (temp.Overskrift != aftaleseddelWindow.aftaleseddelViewModel.Overskrift)
+                    {
+                        mvm.RedigerAftaleseddel("Overskrift", aftaleseddelWindow.aftaleseddelViewModel.Overskrift);
+                    }
+                }
+
+
+            }
         }
     }
 }

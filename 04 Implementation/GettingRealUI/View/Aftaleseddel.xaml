@@ -1,4 +1,4 @@
-﻿<Window x:Class="GettingRealUI.View.Aftaleseddel"
+﻿<Window x:Class="GettingRealUI.View.Aftaleseddel" WindowState="Maximized"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -52,7 +52,7 @@
                         <TextBlock Text="BYGHERRE" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
                      
 						<!--Bygherre-->
-						<TextBox x:Name="BygHerre" Text="Wildcat" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="BygHerre" Text="{Binding Bygherre}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" IsReadOnly="True"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
@@ -68,7 +68,7 @@
                         <TextBlock Text="PROJEKTNAVN" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
 					
 						<!--Projektnavn-->
-						<TextBox x:Name="ProjektNavn" Text="{Binding ProjektNavn}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="ProjektNavn" Text="{Binding ProjektNavn}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" IsReadOnly="True"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
@@ -76,7 +76,7 @@
 
 						<!--Til-->
                         <TextBlock Text="TIL" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
-                        <TextBox x:Name="Til" Text="Dan" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+                        <TextBox x:Name="Til" Text="{Binding Modtager}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="9" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="180" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
@@ -84,7 +84,7 @@
                         <TextBlock Text="LØBENR" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
                       
 						<!--Løbenr-->
-						<TextBox x:Name="LøbeNr" Text="1" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="LøbeNr" Text="{Binding LøbeNr}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="8" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="150" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
@@ -92,7 +92,7 @@
                         <TextBlock Text="DATO" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
                      
 						<!--Dato-->
-						<TextBox x:Name="Dato" Text="17/11/2020" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="Dato" Text="{Binding Dato}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
 
@@ -101,7 +101,7 @@
                         <TextBlock Text="PROJEKTNUMMER" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
                        
 						<!--ProjektNummer-->
-						<TextBox x:Name="ProjektNummer" Text="Wildcat" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="ProjektNummer" Text="{Binding ProjektNr}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="500" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0">
@@ -109,7 +109,7 @@
                         <TextBlock Text="TIDSPLANPÅVIRKNING" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
                    
 						<!--Tidsplanspåvirkning-->
-						<TextBox x:Name="TidsPlanPåvirkning" Text="Odense" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="TidsPlanPåvirkning" Text="{Binding TidsPåvirkning}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="500" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0" >
@@ -117,7 +117,7 @@
                         <TextBlock Text="OVERSKRIFT" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
                        
 						<!--Overskrift-->
-						<TextBox x:Name="Overskrift" Text="Dan" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="Overskrift" Text="{Binding Overskrift}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="9" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="180" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0" >
@@ -125,7 +125,7 @@
                         <TextBlock Text="REF PLAN" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
                        
 						<!--Refference plan-->
-						<TextBox x:Name="RefPlan" Text="1" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="RefPlan" Text="{Binding RefPlan}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="8" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="150" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0" >
@@ -133,7 +133,7 @@
                         <TextBlock Text="SVAR SENEST" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
                         
 						<!--Svar senest-->
-						<TextBox x:Name="SvarSenest" Text="17/11/2020" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+						<TextBox x:Name="SvarSenest" Text="{Binding SvarSenest}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label >
 
@@ -142,7 +142,7 @@
                         <TextBlock Text="ARBEJSBESKRIVELSE: " FontSize="20" FontWeight="Bold" Foreground="Gray" />
                         
 						<!--Arbejdsbeskrivelse-->
-						<TextBox x:Name="ArbejdsBeskrivelse" Width="1910" Height="90" FontSize="18" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+						<TextBox x:Name="ArbejdsBeskrivelse" Text="{Binding Arbejdsbeskrivelse}" Width="1910" Height="90" FontSize="18" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
                     </StackPanel>
                 </Label>
 
@@ -173,14 +173,14 @@
                         <TextBlock Text="PRIS I ALT: " />
 						
 						<!--Pris i alt-->
-                        <TextBlock x:Name="PrisIAlt" />
+                        <TextBlock x:Name="PrisIAlt" Text="{Binding PrisIAlt}" />
                         <TextBlock Text=" KR."/>
                     </StackPanel>
                 </Label>
 
-                <Button Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2" Content="DEAKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" Foreground="#00618B" />
-                <Button Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="2" Content="AKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" Foreground="#00618B"/>
-                <Button Grid.Row="7" Grid.Column="8" Grid.ColumnSpan="2" Content="OPRET " FontSize="20" FontWeight="Bold" Height="50" Width="250"  Background="#D8CF0E" Foreground="#00618B" BorderThickness="2"/>
+                <Button x:Name="btnDeaktiver" Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="2" Content="DEAKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" Foreground="#00618B" Click="btnDeaktiver_Click"  />
+                <Button x:Name="btnAktiver" Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="2" Content="AKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" Foreground="#00618B" Click="btnAktiver_Click" />
+                <Button x:Name="btnOpretAftaleseddel" Grid.Row="7" Grid.Column="8" Grid.ColumnSpan="2" Content="OPRET " FontSize="20" FontWeight="Bold" Height="50" Width="250"  Background="#D8CF0E" Foreground="#00618B" BorderThickness="2" Click="btnOpretAftaleseddel_Click" />
 
                 <StackPanel Grid.Row="8" Grid.ColumnSpan="3" Grid.Column="1" Grid.RowSpan="2">
                     <TextBlock Text="PRISGRUNDLAG" Foreground="White" Background="#00618B" FontSize="20" FontWeight="Bold" TextAlignment="Center"/>
@@ -248,8 +248,8 @@
                     </StackPanel>
                 </Label>
 
-                <Button Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" Content="FORTRYD" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" HorizontalAlignment="Left" Foreground="#00618B"/>
-                <Button Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="2" Content="GODKEND" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" HorizontalAlignment="Left" Margin="-10,0,0,0" Foreground="#00618B"/>
+                <Button x:Name="btnFortryd" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" Content="FORTRYD" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" HorizontalAlignment="Left" Foreground="#00618B" Click="btnFortryd_Click" />
+                <Button x:Name="btnGodkendt" Grid.Row="9" Grid.Column="8" Grid.ColumnSpan="2" Content="GODKEND" FontSize="20" FontWeight="Bold" Height="50" Width="200"  BorderThickness="2" HorizontalAlignment="Left" Margin="-10,0,0,0" Foreground="#00618B" Click="btnGodkendt_Click" />
 
                 <Label Grid.Row="9" Grid.ColumnSpan="10" Height="15" Margin="0,80,0,0" Padding="0">
                     <StackPanel Width="1900"  >

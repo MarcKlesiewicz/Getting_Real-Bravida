@@ -100,6 +100,17 @@ namespace GettingRealUI.Model
             valgtAftaleseddel.Arbejdsudførelse = arbejdsUdførelse;
             valgtAftaleseddel = null;
         }
+
+        public void sætaftaleseddel(Aftaleseddel aftaleseddel)
+        {
+            foreach (var item in aftaleseddeler)
+            {
+                if(aftaleseddel == item)
+                {
+                    valgtAftaleseddel = item;
+                }
+            }
+        }
     }
 
 }

@@ -5,16 +5,16 @@ using GettingRealUI.Model;
 
 namespace GettingRealUI.ViewModel
 {
-    class AftaleseddelViewModel
+    public class AftaleseddelViewModel
     {
         private Model.Aftaleseddel aftaleseddel;
-        public string Bygherre { get; set; }
+        public string Bygherre { get; set; } 
 
         public int ProjektNr { get; set; }
 
-        public string Sted { get; set; }
+        public string Sted { get; set; } 
 
-        public int LøbeNr { get; set; }
+        public int LøbeNr { get; set; } 
 
         public string Dato { get; set; }
 
@@ -30,6 +30,14 @@ namespace GettingRealUI.ViewModel
 
         public string Overskrift { get; set; }
 
+        public string SvarSenest { get; set; }
+
+        public string RefPlan { get; set; }
+
+        public string Arbejdsbeskrivelse { get; set; }
+
+        public string PrisIAlt { get; set; }
+
         public AftaleseddelViewModel(Model.Aftaleseddel aftaleseddel)
         {
             this.aftaleseddel = aftaleseddel;
@@ -43,6 +51,11 @@ namespace GettingRealUI.ViewModel
             TidsPåvirkning = aftaleseddel.TidsPåvirkning;
             Prisgrundlag = aftaleseddel.Prisgrundlag;
             Overskrift = aftaleseddel.Overskrift;
+            SvarSenest = aftaleseddel.SvarSenest;
+            RefPlan = aftaleseddel.RefPlan;
+            Arbejdsbeskrivelse = aftaleseddel.Arbejdsbeskrivelse;
+            PrisIAlt = aftaleseddel.PrisIAlt;
+
            
         }
     }

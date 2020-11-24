@@ -19,13 +19,40 @@ namespace GettingRealUI.View
     /// </summary>
     public partial class Aftaleseddel : Window
     {
-        private AftaleseddelViewModel aftaleseddelViewModel;
+        public readonly AftaleseddelViewModel aftaleseddelViewModel;
 
         public Aftaleseddel(Model.Aftaleseddel aftaleseddel)
         {
             InitializeComponent();
             aftaleseddelViewModel = new AftaleseddelViewModel(aftaleseddel);
             DataContext = aftaleseddelViewModel;
+        }
+
+        private void btnDeaktiver_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnAktiver_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnOpretAftaleseddel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnFortryd_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
+        }
+
+        private void btnGodkendt_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+            this.Close();
         }
     }
 }
