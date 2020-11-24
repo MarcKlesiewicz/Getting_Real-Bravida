@@ -15,6 +15,7 @@ namespace GettingReal
         public void OpretArbejdsbeskrivelse()
         {
             arbejdsbeskrivelseRepo.OpretArbejdsbeskrivelse();
+
         }
 
         //Metode til at finde alle arbejdsbeskrivelser med et givent løbenummer
@@ -74,7 +75,7 @@ namespace GettingReal
         public Aftaleseddel TilføjAftaleSeddelInformation(string overskift, string modtager, string tidsPåvirkning, string prisGrundlag, string arbejdsUdførelse)
         {
             return entrepriseOversigt.TilføjAftaleSeddelInformation(overskift, modtager, tidsPåvirkning, prisGrundlag, arbejdsUdførelse);
-            
+
         }
 
         public void RedigerAftaleseddel(string parameter, string redigerTil)
@@ -102,5 +103,58 @@ namespace GettingReal
 
         }
 
+        public void DeaktiverArbejdsbeskrivelse()
+        {
+            // Laver en try catch, i det tilfælde der ikke er valgt en arbejdsbeskrivelse
+       
+                arbejdsbeskrivelseRepo.deaktiveretArbejdsbeskrivelse();
+
+        }
+
+        public void RedigerArbejdsbeskrivelse(string parameter)
+        {
+
+            arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(parameter);
+
+        }
+        public void RedigerArbejdsbeskrivelse(int antal)
+        {
+            arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(antal);
+
+        }
+        public void RedigerArbejdsbeskrivelse(double enhedsPris)
+        {
+            arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(enhedsPris);
+        }
+        public void VælgArbejdsbeskrivelse(int ID)
+        {
+            arbejdsbeskrivelseRepo.VælgArbejdsbeskrivelse(ID);
+        }
+
+        //double temp = 0;
+        //try
+        //{
+
+        //    if (int.TryParse(parameter, out int antal))
+        //    {
+        //        arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(antal);
+        //    }
+
+        //    else if (double.TryParse(parameter, out double enhedsPris))
+        //    {
+        //        temp = arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(enhedsPris);
+        //    }
+        //    else
+        //    {
+        //        arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(parameter);
+        //    }
+        //}
+        //catch (Exception e)
+        //{
+        //    Console.WriteLine(e.Message);
+        //    throw;
+        //}
+        //return temp; 
     }
 }
+

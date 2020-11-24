@@ -99,5 +99,47 @@ namespace GettingReal
             }
             return tempList;
         }
+
+        public void deaktiveretArbejdsbeskrivelse()
+        {
+            if (valgteArbejdsbeskrivelse != null)
+            {
+                valgteArbejdsbeskrivelse.Aktiveret = false;
+            }
+           
+        }
+
+        public string RedigerArbejdsbeskrivelse(string tekst)
+        {
+            if (valgteArbejdsbeskrivelse != null)
+            {
+                valgteArbejdsbeskrivelse.Tekst = tekst;
+                return tekst;
+            }
+
+            return null;
+
+        }
+        public double RedigerArbejdsbeskrivelse(double enhedsPris)
+        {
+            if (valgteArbejdsbeskrivelse != null)
+            {
+                valgteArbejdsbeskrivelse.EnhedsPris = enhedsPris;
+                return enhedsPris;
+            }
+
+            return 0.0;
+        }
+        public int RedigerArbejdsbeskrivelse(int antal)
+        {
+            //Fjerner en nullexceptionen da der skal være valgt en arbejdsbeskrivelse
+            if (valgteArbejdsbeskrivelse != null)
+            {
+                valgteArbejdsbeskrivelse.Antal = antal;
+                return antal;
+            }
+
+            return 0;
+        }
     }
 }
