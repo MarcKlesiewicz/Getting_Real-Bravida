@@ -6,6 +6,7 @@ namespace GettingReal
 {
     public class Aftaleseddel
     {
+        public bool Aktiveret { get; set; } = true;
         public string Bygherre { get; set; }
 
         public int ProjektNr { get; set; }

@@ -80,11 +80,11 @@ namespace GettingReal
         }
 
         //Metode til at slette den arbejdsbeskrivelse der i øjeblikket håndteres
-        public void SletArbejdsbeskrivelse()
-        {
-            _arbejdsbeskrivelser.Remove(valgteArbejdsbeskrivelse);
-            valgteArbejdsbeskrivelse = null;
-        }
+        //public void SletArbejdsbeskrivelse()
+        //{
+        //    _arbejdsbeskrivelser.Remove(valgteArbejdsbeskrivelse);
+        //    valgteArbejdsbeskrivelse = null;
+        //}
 
         //En metode til at finde alle de arbejdsbeskrivelser med et givent løbenummer.
         public List<Arbejdsbeskrivelse> FindArbejdsbeskrivelser(int løbeNr)
@@ -100,11 +100,24 @@ namespace GettingReal
             return tempList;
         }
 
-        public void deaktiveretArbejdsbeskrivelse()
+        public void DeaktiveretArbejdsbeskrivelse()
         {
             if (valgteArbejdsbeskrivelse != null)
             {
                 valgteArbejdsbeskrivelse.Aktiveret = false;
+            }
+           
+        }
+
+        public void AktiverArbejdsbeskrivelse()
+        {
+            if (valgteArbejdsbeskrivelse != null)
+            {
+                if (valgteArbejdsbeskrivelse.Aktiveret != false )
+                {
+                     valgteArbejdsbeskrivelse.Aktiveret = true;
+                }
+               
             }
            
         }

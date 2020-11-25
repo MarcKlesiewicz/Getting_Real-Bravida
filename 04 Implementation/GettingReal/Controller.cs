@@ -40,12 +40,17 @@ namespace GettingReal
             }
         }
 
-        //Metode til at slette den arbejdsbeskrivelse der i øjeblikket arbejdes med
-        public void SletArbejdsbeskrivelse()
+        //Metode til at aktiverer den aftaleseddel der i øjeblikket arbejdes med
+        public void AktiverAftaleseddel()
         {
-            arbejdsbeskrivelseRepo.SletArbejdsbeskrivelse();
+            entrepriseOversigt.AktiverAftaleseddel();
         }
-
+        public void DeaktiverAftaleseddel()
+        {
+            entrepriseOversigt.AktiverAftaleseddel();
+        }
+        
+        
         public void OpretAftaleseddel()
         {
             entrepriseOversigt.OpretAftaleseddel();
@@ -105,10 +110,12 @@ namespace GettingReal
 
         public void DeaktiverArbejdsbeskrivelse()
         {
-            // Laver en try catch, i det tilfælde der ikke er valgt en arbejdsbeskrivelse
-       
-                arbejdsbeskrivelseRepo.deaktiveretArbejdsbeskrivelse();
 
+                arbejdsbeskrivelseRepo.DeaktiveretArbejdsbeskrivelse();
+        }
+        public void AktiverArbejdsbeskrivelse()
+        {
+            arbejdsbeskrivelseRepo.AktiverArbejdsbeskrivelse();
         }
 
         public void RedigerArbejdsbeskrivelse(string parameter)
@@ -126,11 +133,7 @@ namespace GettingReal
         {
             arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(enhedsPris);
         }
-        public void VælgArbejdsbeskrivelse(int ID)
-        {
-            arbejdsbeskrivelseRepo.VælgArbejdsbeskrivelse(ID);
-        }
-
+      
     }
 }
 
