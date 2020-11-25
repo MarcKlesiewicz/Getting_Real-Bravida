@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
 using GettingRealUI.Model;
 
 namespace GettingRealUI.ViewModel
@@ -9,13 +10,43 @@ namespace GettingRealUI.ViewModel
     {
         private EntrepriseOversigt entrepriseOversigt;
 
-        public List<Aftaleseddel> Aftaleseddels { get; set; }
+        public ObservableCollection<Aftaleseddel> Aftaleseddels { get; set; }
 
-        public string ProjektNavn { get; set; }
+        private string projektNavn;
 
-        public int ProjektNr { get; set; }
+        public string ProjektNavn
+        {
+            get { return projektNavn; }
+            set 
+            {
+                projektNavn = value;
+                entrepriseOversigt.ProjektNavn = value;
+            }
+        }
 
-        public string Sted { get; set; }
+        private int projektNr;
+
+        public int ProjektNr
+        {
+            get { return projektNr; }
+            set
+            {
+                projektNr = value;
+                entrepriseOversigt.ProjektNr = value;
+            }
+        }
+
+        private string sted;
+
+        public string Sted
+        {
+            get { return sted; }
+            set
+            {
+                sted = value;
+                entrepriseOversigt.Sted = value;
+            }
+        }
 
         public int LøbeNr { get; set; }
 
@@ -35,10 +66,10 @@ namespace GettingRealUI.ViewModel
 
             Aftaleseddels =  VisEntrepriseOversigt();
         }
-        public List<Aftaleseddel> VisEntrepriseOversigt()
+        public ObservableCollection<Aftaleseddel> VisEntrepriseOversigt()
         {
             return entrepriseOversigt.Vis();
-
+            
         }
 
         public Aftaleseddel OpretAftaleseddel()
@@ -70,14 +101,42 @@ namespace GettingRealUI.ViewModel
                 case "ArbejdsUdførelse":
                     entrepriseOversigt.RedigerArbejdsUdførelse(redigerTil);
                     break;
+                case "SvarSenest":
+                    entrepriseOversigt.RedigerSvarSenest(redigerTil);
+                    break;
+                case "RefPlan":
+                    entrepriseOversigt.RedigerRefPlan(redigerTil);
+                    break;
+                case "Arbejdsbeskrivelse":
+                    entrepriseOversigt.RedigerArbejdsbeskrivelse(redigerTil);
+                    break;
                 default:
                     break;
             }
 
         }
-        public void sætaftaleseddel(Aftaleseddel aftaleseddel)
+        public void Sætaftaleseddel(Aftaleseddel aftaleseddel)
         {
             entrepriseOversigt.sætaftaleseddel(aftaleseddel);
+        }
+
+        public void GodkendAftaleseddel()
+        {
+            entrepriseOversigt.GodkendAftaleseddel();
+        }
+
+        public void SætProjektnavn(string navn)
+        {
+            entrepriseOversigt.ProjektNavn = navn;
+        }
+        public void SætAktivTilTrue()
+        {
+            entrepriseOversigt.SætAktivTilTrue();
+        }
+
+        public void SætAktivTilFalse()
+        {
+            entrepriseOversigt.SætAktivTilFalse();
         }
     }
 }

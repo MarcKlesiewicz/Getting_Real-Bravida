@@ -19,15 +19,55 @@ namespace GettingRealUI.Model
 
         public string ProjektNavn { get; set; } = "hej";
 
-        public string Modtager { get; set; } = "hej";
+        private string modtager;
 
-        public string TidsPåvirkning { get; set; } = "hej";
+        public string Modtager
+        {
+            get { return modtager; }
+            set 
+            {
+                modtager = value;
+                OnPropertyChanged("Modtager");
+            }
+        }
 
-        public string Arbejdsudførelse { get; set; } = "hej";
+        private string tidsPårvirkning;
 
-        public string Prisgrundlag { get; set; } = "hej";
+        public string TidsPåvirkning
+        {
+            get { return tidsPårvirkning; }
+            set 
+            { 
+                tidsPårvirkning = value;
+                OnPropertyChanged("TidsPåvirkning");
+            }
+        }
 
-        private string overskift = "hej";
+        private string arbejdsudførelse;
+
+        public string Arbejdsudførelse
+        {
+            get { return arbejdsudførelse; }
+            set 
+            { 
+                arbejdsudførelse = value;
+                OnPropertyChanged("Arbejdsudførelse");
+            }
+        }
+
+        private string prisgrundlag;
+
+        public string Prisgrundlag
+        {
+            get { return prisgrundlag; }
+            set 
+            {
+                prisgrundlag = value;
+                OnPropertyChanged("Prisgrundlag");
+            }
+        }
+
+        private string overskift;
 
         public string Overskrift
         {
@@ -39,12 +79,54 @@ namespace GettingRealUI.Model
             }
         }
 
+        private string svarSenest;
 
-        public string SvarSenest { get; set; } = "Imorgen";
+        public string SvarSenest
+        {
+            get { return svarSenest; }
+            set 
+            { 
+                svarSenest = value;
+                OnPropertyChanged("SvarSenest");
+            }
+        }
 
-        public string RefPlan { get; set; } = "21";
+        private string refPlan;
 
-        public string Arbejdsbeskrivelse { get; set; }
+        public string RefPlan
+        {
+            get { return refPlan; }
+            set 
+            { 
+                refPlan = value;
+                OnPropertyChanged("RefPlan");
+            }
+        }
+
+        private string arbejdsbeskrivelse;
+
+        public string Arbejdsbeskrivelse
+        {
+            get { return arbejdsbeskrivelse; }
+            set
+            { 
+                arbejdsbeskrivelse = value;
+                OnPropertyChanged("Arbejdsbeskrivelse");
+            }
+        }
+
+        private bool aktiv = true;
+
+        public bool Aktiv
+        {
+            get { return aktiv; }
+            set
+            { 
+                aktiv = value;
+                OnPropertyChanged("Aktiv");
+            }
+        }
+
 
         public string PrisIAlt { get; set; }
 

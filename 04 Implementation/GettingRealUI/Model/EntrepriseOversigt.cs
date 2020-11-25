@@ -1,36 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace GettingRealUI.Model
 {
     public class EntrepriseOversigt
     {
-        public string ProjektNavn { get; set; } = "heje";
+        private string projektNavn;
 
-        public string Bygherre { get; set; } = "Dan";
+        public string ProjektNavn
+        {
+            get { return projektNavn; }
+            set
+            { 
+                projektNavn = value;
+                foreach (var item in aftaleseddeler)
+                {
+                    item.ProjektNavn = value;
+                }
+            }
+        }
 
-        public int ProjektNr { get; set; } = 1;
+        private string bygherre;
 
-        public string Sted { get; set; } = "odense";
+        public string Bygherre
+        {
+            get { return bygherre; }
+            set
+            {
+                bygherre = value;
+                foreach (var item in aftaleseddeler)
+                {
+                    item.Bygherre = value;
+                }
+            }
+        }
+
+        private int projektNr;
+
+        public int ProjektNr
+        {
+            get { return projektNr; }
+            set
+            {
+                projektNr = value;
+                foreach (var item in aftaleseddeler)
+                {
+                    item.ProjektNr = value;
+                }
+            }
+        }
+
+        private string sted;
+
+        public string Sted
+        {
+            get { return sted; }
+            set
+            {
+                sted = value;
+                foreach (var item in aftaleseddeler)
+                {
+                    item.Sted = value;
+                }
+            }
+        }
 
         public int LøbeNr { get; set; } = 1;
 
         public string Dato { get; set; } = "1/1";
 
-        public string Oprettelse { get; set; } = "Dan";
+        public string Oprettelse { get; set; }
 
-        private List<Aftaleseddel> aftaleseddeler = new List<Aftaleseddel>() { new Aftaleseddel(2, "dan", "odense", "21/21", 1, "hallo"), new Aftaleseddel(2, "dan", "odense", "21/21", 2, "hallo") };
+        private ObservableCollection<Aftaleseddel> aftaleseddeler = new ObservableCollection<Aftaleseddel>() { new Aftaleseddel(2, "dan", "odense", "21/21", 1, "hallo"), new Aftaleseddel(2, "dan", "odense", "21/21", 2, "hallo") };
+
         public Aftaleseddel valgtAftaleseddel { get; private set; }
 
         public Aftaleseddel OpretAftaleseddel()
         {
-            valgtAftaleseddel = new Aftaleseddel(ProjektNr, Bygherre, Sted, Dato, LøbeNr, ProjektNavn);
+            valgtAftaleseddel = new Aftaleseddel(ProjektNr, Bygherre, Sted, Dato, (aftaleseddeler.Count + 1), ProjektNavn);
             return valgtAftaleseddel;
 
         }
 
-        public List<Aftaleseddel> Vis()
+        public ObservableCollection<Aftaleseddel> Vis()
         {
             return aftaleseddeler;
 
@@ -74,31 +129,49 @@ namespace GettingRealUI.Model
         public void RedigerOverskift(string overskift)
         {
             valgtAftaleseddel.Overskrift = overskift;
-            valgtAftaleseddel = null;
         }
 
         public void RedigerModtager(string modtager)
         {
             valgtAftaleseddel.Modtager = modtager;
-            valgtAftaleseddel = null;
         }
 
         public void RedigerTidspåvirkning(string tidspåvirkning)
         {
             valgtAftaleseddel.TidsPåvirkning = tidspåvirkning;
-            valgtAftaleseddel = null;
         }
 
         public void RedigerPrisGrundlag(string prisgrundlag)
         {
             valgtAftaleseddel.Prisgrundlag = prisgrundlag;
-            valgtAftaleseddel = null;
         }
 
         public void RedigerArbejdsUdførelse(string arbejdsUdførelse)
         {
             valgtAftaleseddel.Arbejdsudførelse = arbejdsUdførelse;
-            valgtAftaleseddel = null;
+        }
+        public void RedigerSvarSenest(string svarSenest)
+        {
+            valgtAftaleseddel.SvarSenest = svarSenest;
+        }
+        public void RedigerRefPlan(string refPlan)
+        {
+            valgtAftaleseddel.RefPlan = refPlan;
+        }
+
+        public void RedigerArbejdsbeskrivelse(string arbejdsbeskrivelse)
+        {
+            valgtAftaleseddel.Arbejdsbeskrivelse = arbejdsbeskrivelse;
+        }
+
+        public void SætAktivTilTrue()
+        {
+            valgtAftaleseddel.Aktiv = true;
+        }
+
+        public void SætAktivTilFalse()
+        {
+            valgtAftaleseddel.Aktiv = false;
         }
 
         public void sætaftaleseddel(Aftaleseddel aftaleseddel)

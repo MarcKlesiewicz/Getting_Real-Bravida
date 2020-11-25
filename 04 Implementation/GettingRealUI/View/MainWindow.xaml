@@ -50,7 +50,7 @@
             <Label HorizontalAlignment="Left"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
                 <StackPanel >
                     <TextBlock Text="Projektnavn" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-                    <TextBox x:Name="Projektnavn" Text="{Binding ProjektNavn, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" />
+                    <TextBox x:Name="Projektnavn" Text="{Binding ProjektNavn, UpdateSourceTrigger=LostFocus}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                 </StackPanel>
             </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
@@ -112,7 +112,7 @@
                 <ListBox x:Name="ListBoxAftaleSeddel" Grid.Row ="3" Grid.ColumnSpan="10" Grid.RowSpan="5" BorderThickness="3" ItemsSource="{Binding Aftaleseddels}" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" IsEnabled="{Binding Aktiv}">
                                 <TextBox Text="{Binding LøbeNr}" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="150" TextAlignment="Center" IsReadOnly="True"/>
                                 <TextBox Text="{Binding Overskrift}" FontSize="20"   BorderThickness="2" BorderBrush="Black" Width="900" IsReadOnly="True"/>
                                 <TextBox Text="" FontSize="20"  BorderThickness="2" BorderBrush="Black" Width="200" TextAlignment="Center" IsReadOnly="True"/>
@@ -124,9 +124,9 @@
                 </ListBox>
                                 
                 <!--Deaktiver knap-->
-                <Button x:Name="Deaktiver_Knap" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Content="DEAKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200" Margin="0,30,0,0" BorderThickness="2" Foreground="#00618B"/>
+                <Button x:Name="Deaktiver_Knap" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Content="DEAKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200" Margin="0,30,0,0" BorderThickness="2" Foreground="#00618B" Click="Deaktiver_Knap_Click"/>
 			<!--Aktiver knap-->   
-			<Button x:Name="Aktiver_Knap" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Content="AKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200" Margin="0,30,0,0" BorderThickness="2" Foreground="#00618B"/>
+			<Button x:Name="Aktiver_Knap" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Content="AKTIVER" FontSize="20" FontWeight="Bold" Height="50" Width="200" Margin="0,30,0,0" BorderThickness="2" Foreground="#00618B" Click="Aktiver_Knap_Click"/>
                 <!--Opret-->
 			<Button x:Name="Opret_knap" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="2" Content="OPRET AFTALESEDDEL" FontSize="20" FontWeight="Bold" Height="50" Width="250" Margin="0,30,0,0" Background="#D8CF0E" Foreground="#00618B" BorderThickness="2" Click="Opret_knap_Click"/>
 
