@@ -50,99 +50,99 @@
                 <Label HorizontalAlignment="Left"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
                     <StackPanel >
                         <TextBlock Text="BYGHERRE" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-                     
-						<!--Bygherre-->
-						<TextBox x:Name="BygHerre" Text="{Binding Bygherre}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" IsReadOnly="True"/>
+
+                        <!--Bygherre-->
+                        <TextBox x:Name="BygHerre" Text="{Binding asvm.Bygherre}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" IsReadOnly="True"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
                     <StackPanel >
                         <TextBlock Text="STED" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-						
-						<!--Sted-->
-						<TextBox x:Name="Sted" Text="{Binding Sted}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--Sted-->
+                        <TextBox x:Name="Sted" Text="{Binding asvm.Sted}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0">
                     <StackPanel >
                         <TextBlock Text="PROJEKTNAVN" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-					
-						<!--Projektnavn-->
-						<TextBox x:Name="ProjektNavn" Text="{Binding ProjektNavn}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" IsReadOnly="True"/>
+
+                        <!--Projektnavn-->
+                        <TextBox x:Name="ProjektNavn" Text="{Binding asvm.ProjektNavn}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18" IsReadOnly="True"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="6" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
                     <StackPanel >
 
-						<!--Til-->
+                        <!--Til-->
                         <TextBlock Text="TIL" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
-                        <TextBox x:Name="Til" Text="{Binding Modtager}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+                        <TextBox x:Name="Til" Text="{Binding asvm.Modtager}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="9" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="180" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
                     <StackPanel >
                         <TextBlock Text="LØBENR" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
-                      
-						<!--Løbenr-->
-						<TextBox x:Name="LøbeNr" Text="{Binding LøbeNr}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--Løbenr-->
+                        <TextBox x:Name="LøbeNr" Text="{Binding asvm.LøbeNr}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="8" Grid.Row="1" VerticalAlignment="Top" Height="54" Width="150" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,10,0,0" >
                     <StackPanel >
                         <TextBlock Text="DATO" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
-                     
-						<!--Dato-->
-						<TextBox x:Name="Dato" Text="{Binding Dato}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--Dato-->
+                        <TextBox x:Name="Dato" Text="{Binding asvm.Dato}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
 
                 <Label HorizontalAlignment="Left"  Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="300" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0">
                     <StackPanel >
                         <TextBlock Text="PROJEKTNUMMER" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-                       
-						<!--ProjektNummer-->
-						<TextBox x:Name="ProjektNummer" Text="{Binding ProjektNr}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--ProjektNummer-->
+                        <TextBox x:Name="ProjektNummer" Text="{Binding asvm.ProjektNr}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="500" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0">
                     <StackPanel >
                         <TextBlock Text="TIDSPLANPÅVIRKNING" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20" />
-                   
-						<!--Tidsplanspåvirkning-->
-						<TextBox x:Name="TidsPlanPåvirkning" Text="{Binding TidsPåvirkning}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--Tidsplanspåvirkning-->
+                        <TextBox x:Name="TidsPlanPåvirkning" Text="{Binding asvm.TidsPåvirkning}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="500" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0" >
                     <StackPanel >
                         <TextBlock Text="OVERSKRIFT" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
-                       
-						<!--Overskrift-->
-						<TextBox x:Name="Overskrift" Text="{Binding Overskrift}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--Overskrift-->
+                        <TextBox x:Name="Overskrift" Text="{Binding asvm.Overskrift}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="9" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="180" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0" >
                     <StackPanel >
                         <TextBlock Text="REF PLAN" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
-                       
-						<!--Refference plan-->
-						<TextBox x:Name="RefPlan" Text="{Binding RefPlan}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--Refference plan-->
+                        <TextBox x:Name="RefPlan" Text="{Binding asvm.RefPlan}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label>
                 <Label HorizontalAlignment="Left" Grid.Column="8" Grid.Row="2" VerticalAlignment="Top" Height="54" Width="150" BorderThickness="2" BorderBrush="Black" Padding="0" Margin="0,-10,0,0" >
                     <StackPanel >
                         <TextBlock Text="SVAR SENEST" Margin="0,-3,0,0" Foreground="Gray" FontWeight="Bold" FontSize="20"/>
-                        
-						<!--Svar senest-->
-						<TextBox x:Name="SvarSenest" Text="{Binding SvarSenest}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
+
+                        <!--Svar senest-->
+                        <TextBox x:Name="SvarSenest" Text="{Binding asvm.SvarSenest}" Margin="0,0,0,0" Height="25" BorderThickness="0" FontSize="18"/>
                     </StackPanel>
                 </Label >
 
                 <Label Grid.Row="3" Grid.ColumnSpan="10" BorderBrush="Black" BorderThickness="2" Padding="0" Margin="0,-20,0,0">
                     <StackPanel>
                         <TextBlock Text="ARBEJSBESKRIVELSE: " FontSize="20" FontWeight="Bold" Foreground="Gray" />
-                        
-						<!--Arbejdsbeskrivelse-->
-						<TextBox x:Name="ArbejdsBeskrivelse" Text="{Binding Arbejdsbeskrivelse}" Width="1910" Height="90" FontSize="18" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+                        <!--Arbejdsbeskrivelse-->
+                        <TextBox x:Name="ArbejdsBeskrivelse" Text="{Binding asvm.Arbejdsbeskrivelse}" Width="1910" Height="90" FontSize="18" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
                     </StackPanel>
                 </Label>
 
@@ -156,24 +156,26 @@
                     <TextBlock Background="#D8CF0E" />
                 </StackPanel>
 
-				<!--Listbox arbejdsbeskrivelser-->
-                <ListBox x:Name="ListBoxArbejdsBeskrivelser" Grid.Row ="5" Grid.ColumnSpan="10" Grid.RowSpan="2" BorderThickness="3" >
-                    <ListBoxItem>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBox Text="BLABLA" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="1000" />
-                            <TextBox Text="5" FontSize="20"  BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right"  />
-                            <TextBox Text="54" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right" />
-                            <TextBox Text="100" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="300" TextAlignment="Right" IsReadOnly="True"/>
-                        </StackPanel>
-                    </ListBoxItem>
+                <!--Listbox arbejdsbeskrivelser-->
+                <ListBox x:Name="ListBoxArbejdsBeskrivelser" Grid.Row ="5" Grid.ColumnSpan="10" Grid.RowSpan="2" BorderThickness="3" ItemsSource="{Binding abvm.Arbejdsbeskrivelses}" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" IsEnabled="{Binding Aktiv}">
+                                <TextBox Text="{Binding Tekst}" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="1000" />
+                                <TextBox Text="{Binding Antal}" FontSize="20"  BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right"  />
+                                <TextBox Text="{Binding EnhedsPris}" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right" />
+                                <TextBox Text="{Binding Sum}" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="300" TextAlignment="Right" IsReadOnly="True" TextChanged="Sum_TextChanged"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
 
                 <Label Grid.Row="7" Grid.ColumnSpan="2" BorderThickness="0" FontSize="20" FontWeight="Bold" Foreground="#00618B" Margin="0,30,0,0">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="PRIS I ALT: " />
-						
-						<!--Pris i alt-->
-                        <TextBlock x:Name="PrisIAlt" Text="{Binding PrisIAlt}" />
+
+                        <!--Pris i alt-->
+                        <TextBlock x:Name="PrisIAlt" Text="{Binding asvm.PrisIAlt}" />
                         <TextBlock Text=" KR."/>
                     </StackPanel>
                 </Label>
@@ -188,24 +190,24 @@
                     <Label BorderThickness="2" BorderBrush="Black" >
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
-								
+
 								<!--BygHerreØnske-->
-                                <CheckBox x:Name="BygHerreØnske" Margin="50,10,0,0"/>
-                                <Label x:Name="BygHerreønske" Content="BYGHERREØNSKE" FontSize="18" FontWeight="Bold" Foreground="Gray" Margin="0,0,100,0" />
+								<CheckBox x:Name="BygHerreØnske" Margin="50,10,0,0" Checked="BygHerreØnske_Checked"/>
+								<Label x:Name="BygHerreønskeLabel" Content="BYGHERREØNSKE" FontSize="18" FontWeight="Bold" Foreground="Gray" Margin="0,0,100,0" />
 
 								<!--EfterRegning-->
-								<CheckBox  x:Name="EfterRegning" Margin="0,10,0,0"/>
-                                <Label Content="EFTERREGNING" FontSize="18" FontWeight="Bold" Foreground="Gray"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" >
+								<CheckBox  x:Name="EfterRegning" Margin="0,10,0,0" Checked="EfterRegning_Checked"/>
+								<Label x:Name="EfterRegningLabel" Content="EFTERREGNING" FontSize="18" FontWeight="Bold" Foreground="Gray"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal" >
 
 								<!--Tillægspris-->
-                                <CheckBox x:Name="TillægsPris" Margin="50,10,0,0"/>
-                                <Label Content="TILLÆGSPRIS" FontSize="18" FontWeight="Bold" Foreground="Gray" Margin="0,0,100,0"/>
+								<CheckBox x:Name="TillægsPris" Margin="50,10,0,0" Checked="TillægsPris_Checked"/>
+								<Label x:Name="TillægsPrisLabel" Content="TILLÆGSPRIS" FontSize="18" FontWeight="Bold" Foreground="Gray" Margin="0,0,100,0"/>
 								<!--ProjektÆndring-->
-								<CheckBox x:Name="ProjektÆndring"  Margin="37,10,0,0"/>
-                                <Label Content="PROJEKTÆNDRING" FontSize="18" FontWeight="Bold" Foreground="Gray"/>
-                            </StackPanel>
+								<CheckBox x:Name="ProjektÆndring"  Margin="37,10,0,0" Checked="ProjektÆndring_Checked"/>
+								<Label x:Name="ProjektÆndringLabel" Content="PROJEKTÆNDRING" FontSize="18" FontWeight="Bold" Foreground="Gray"/>
+							</StackPanel>
                         </StackPanel>
                     </Label>
                 </StackPanel>
@@ -217,19 +219,19 @@
                         <StackPanel>
                             <StackPanel Orientation="Horizontal">
 								<!--AB 92-->
-                                <CheckBox x:Name="AB92" Margin="50,10,0,0"/>
-                                <Label Content="AB 92" FontSize="18" FontWeight="Bold" Foreground="Gray" Margin="0,0,100,0" />
+								<CheckBox x:Name="AB92" Margin="50,10,0,0" Checked="AB92_Checked"/>
+								<Label x:Name="AB92Label" Content="AB 92" FontSize="18" FontWeight="Bold" Foreground="Gray" Margin="0,0,100,0" />
 
 								<!--Andet-->
-								<CheckBox x:Name="Andet" Margin="0,10,0,0"/>
-                                <Label Content="ANDET" FontSize="18" FontWeight="Bold" Foreground="Gray"/>
-                                <TextBox BorderThickness="0,0,0,2" BorderBrush="Black" Width="200" FontSize="20"  Height="30"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" >
+								<CheckBox x:Name="Andet" Margin="0,10,0,0" Checked="Andet_Checked"/>
+								<Label x:Name="AndetLabel" Content="ANDET" FontSize="18" FontWeight="Bold" Foreground="Gray"/>
+								<TextBox x:Name="AndetTextBox" BorderThickness="0,0,0,2" BorderBrush="Black" Width="200" FontSize="20"  Height="30"/>
+							</StackPanel>
+							<StackPanel Orientation="Horizontal" >
 								<!--STANDARDFORBEHOLD (MÅNED/ÅR) FOR ET ARBEJDE-->
-                                <CheckBox x:Name="StandardForbehold" Margin="50,10,0,0"/>
-                                <Label Content="STANDARDFORBEHOLD (MÅNED/ÅR) FOR ET ARBEJDE" FontSize="18" FontWeight="Bold" Foreground="Gray" />
-                            </StackPanel>
+								<CheckBox x:Name="StandardForbehold" Margin="50,10,0,0" Checked="StandardForbehold_Checked"/>
+								<Label x:Name="StandardForbeholdLabel" Content="STANDARDFORBEHOLD (MÅNED/ÅR) FOR ET ARBEJDE" FontSize="18" FontWeight="Bold" Foreground="Gray" />
+							</StackPanel>
                         </StackPanel>
                     </Label>
                 </StackPanel>
@@ -237,9 +239,9 @@
                 <Label Grid.Row="9" Grid.ColumnSpan="3" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Height="50">
                     <StackPanel Grid.Row="9" Grid.ColumnSpan="3" Grid.Column="1" Orientation="Horizontal" >
                         <TextBlock Text="BEKRÆFTET" FontSize="20" FontWeight="Bold" Foreground="#00618B" Margin="0,0,400,0" />
-                       
-						<!--Bekræftet-->
-						<CheckBox x:Name="Bekræftet">
+
+                        <!--Bekræftet-->
+                        <CheckBox x:Name="Bekræftet">
                             <CheckBox.LayoutTransform>
                                 <ScaleTransform ScaleX="2" ScaleY="2"/>
                             </CheckBox.LayoutTransform>

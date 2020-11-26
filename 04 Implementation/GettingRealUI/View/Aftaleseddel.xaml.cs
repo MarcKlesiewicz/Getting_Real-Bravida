@@ -20,27 +20,34 @@ namespace GettingRealUI.View
     public partial class Aftaleseddel : Window
     {
         public readonly AftaleseddelViewModel aftaleseddelViewModel;
+        private ArbejdsbeskrivelseViewModel arbejdsbeskrivelseViewModel;
 
-        public Aftaleseddel(Model.Aftaleseddel aftaleseddel)
+        public Aftaleseddel(Model.Aftaleseddel aftaleseddel, Model.ArbejdsbeskrivelseRepo arbejdsbeskrivelseRepo)
         {
             InitializeComponent();
             aftaleseddelViewModel = new AftaleseddelViewModel(aftaleseddel);
-            DataContext = aftaleseddelViewModel;
+            arbejdsbeskrivelseViewModel = new ArbejdsbeskrivelseViewModel(arbejdsbeskrivelseRepo);
+            DataContext = new
+            {
+                asvm = aftaleseddelViewModel,
+                abvm = arbejdsbeskrivelseViewModel
+            };
+            arbejdsbeskrivelseViewModel.FindArbejsbeskrivleser(aftaleseddelViewModel.LøbeNr);
         }
 
         private void btnDeaktiver_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void btnAktiver_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void btnOpretAftaleseddel_Click(object sender, RoutedEventArgs e)
         {
-
+            arbejdsbeskrivelseViewModel.OpretArbejdsbeskrivelse(aftaleseddelViewModel.LøbeNr);
         }
 
         private void btnFortryd_Click(object sender, RoutedEventArgs e)
@@ -51,8 +58,113 @@ namespace GettingRealUI.View
 
         private void btnGodkendt_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
-            this.Close();
+            if (Overskrift.Text == "")
+            {
+                MessageBox.Show("Du mangler at sætte overskiften", "Fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                this.DialogResult = true;
+                this.Close();
+            }
+        }
+
+        private void BygHerreØnske_Checked(object sender, RoutedEventArgs e)
+        {
+            PrisGrundlagCheck(BygHerreØnske);
+        }
+
+
+        private void ProjektÆndring_Checked(object sender, RoutedEventArgs e)
+        {
+            PrisGrundlagCheck(ProjektÆndring);
+        }
+
+        private void EfterRegning_Checked(object sender, RoutedEventArgs e)
+        {
+            PrisGrundlagCheck(EfterRegning);
+        }
+
+        private void TillægsPris_Checked(object sender, RoutedEventArgs e)
+        {
+            PrisGrundlagCheck(TillægsPris);
+        }
+
+        private void AB92_Checked(object sender, RoutedEventArgs e)
+        {
+            IHenholdTilCheck(AB92);
+        }
+
+        private void StandardForbehold_Checked(object sender, RoutedEventArgs e)
+        {
+            IHenholdTilCheck(StandardForbehold);
+        }
+
+        private void Andet_Checked(object sender, RoutedEventArgs e)
+        {
+            IHenholdTilCheck(Andet);
+        }
+
+
+        private void PrisGrundlagCheck(CheckBox checkbox)
+        {
+            if (checkbox == BygHerreØnske)
+            {
+                aftaleseddelViewModel.Prisgrundlag = BygHerreønskeLabel.Content.ToString();
+                EfterRegning.IsChecked = false;
+                TillægsPris.IsChecked = false;
+                ProjektÆndring.IsChecked = false;
+            }
+            else if (checkbox == EfterRegning)
+            {
+                aftaleseddelViewModel.Prisgrundlag = EfterRegningLabel.Content.ToString();
+                BygHerreØnske.IsChecked = false;
+                TillægsPris.IsChecked = false;
+                ProjektÆndring.IsChecked = false;
+            }
+            else if (checkbox == TillægsPris)
+            {
+                aftaleseddelViewModel.Prisgrundlag = TillægsPrisLabel.Content.ToString();
+                EfterRegning.IsChecked = false;
+                BygHerreØnske.IsChecked = false;
+                ProjektÆndring.IsChecked = false;
+            }
+            else if (checkbox == ProjektÆndring)
+            {
+                aftaleseddelViewModel.Prisgrundlag = ProjektÆndringLabel.Content.ToString();
+                EfterRegning.IsChecked = false;
+                TillægsPris.IsChecked = false;
+                BygHerreØnske.IsChecked = false;
+            }
+
+        }
+
+        private void IHenholdTilCheck(CheckBox checkbox)
+        {
+            if (checkbox == AB92)
+            {
+                aftaleseddelViewModel.Arbejdsudførelse = AB92Label.Content.ToString();
+                Andet.IsChecked = false;
+                StandardForbehold.IsChecked = false;
+
+            }
+            else if (checkbox == Andet)
+            {
+                aftaleseddelViewModel.Arbejdsudførelse = AndetTextBox.Text;
+                AB92.IsChecked = false;
+                StandardForbehold.IsChecked = false;
+            }
+            else if (checkbox == StandardForbehold)
+            {
+                aftaleseddelViewModel.Arbejdsudførelse = StandardForbehold.Content.ToString();
+                Andet.IsChecked = false;
+                AB92.IsChecked = false;
+            }
+        }
+
+        private void Sum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            aftaleseddelViewModel.FindPrisIAlt(arbejdsbeskrivelseViewModel.Arbejdsbeskrivelses);
         }
     }
 }

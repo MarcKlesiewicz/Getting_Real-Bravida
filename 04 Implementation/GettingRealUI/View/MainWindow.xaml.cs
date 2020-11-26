@@ -22,6 +22,7 @@ namespace GettingRealUI.View
     public partial class MainWindow : Window
     {
         private MainViewModel mvm;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace GettingRealUI.View
         private void Opret_knap_Click(object sender, RoutedEventArgs e)
         {
             Model.Aftaleseddel temp = mvm.OpretAftaleseddel();
-            Aftaleseddel aftaleseddelWindow = new Aftaleseddel(temp);
+            Aftaleseddel aftaleseddelWindow = new Aftaleseddel(temp, mvm.ArbejdsbeskrivelseRepo);
             if (aftaleseddelWindow.ShowDialog().Value)
             {
                 redigere(temp, aftaleseddelWindow);
@@ -46,7 +47,7 @@ namespace GettingRealUI.View
             if (ListBoxAftaleSeddel.SelectedItem is Model.Aftaleseddel)
             {
                 Model.Aftaleseddel temp = (Model.Aftaleseddel)ListBoxAftaleSeddel.SelectedItem;
-                Aftaleseddel aftaleseddelWindow = new Aftaleseddel(temp);
+                Aftaleseddel aftaleseddelWindow = new Aftaleseddel(temp, mvm.ArbejdsbeskrivelseRepo);
                 if (aftaleseddelWindow.ShowDialog().Value)
                 {
                     mvm.Sætaftaleseddel(temp);

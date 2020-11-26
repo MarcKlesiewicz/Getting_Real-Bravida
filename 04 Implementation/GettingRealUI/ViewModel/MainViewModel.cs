@@ -10,6 +10,8 @@ namespace GettingRealUI.ViewModel
     {
         private EntrepriseOversigt entrepriseOversigt;
 
+        public ArbejdsbeskrivelseRepo ArbejdsbeskrivelseRepo = new ArbejdsbeskrivelseRepo();
+
         public ObservableCollection<Aftaleseddel> Aftaleseddels { get; set; }
 
         private string projektNavn;

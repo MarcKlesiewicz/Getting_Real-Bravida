@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
 using GettingRealUI.Model;
+using System.ComponentModel;
 
 namespace GettingRealUI.ViewModel
 {
-    public class AftaleseddelViewModel
+    public class AftaleseddelViewModel : INotifyPropertyChanged
     {
         private Model.Aftaleseddel aftaleseddel;
-        public string Bygherre { get; set; } 
+        public string Bygherre { get; set; }
 
         public int ProjektNr { get; set; }
 
-        public string Sted { get; set; } 
+        public string Sted { get; set; }
 
-        public int LøbeNr { get; set; } 
+        public int LøbeNr { get; set; }
 
         public string Dato { get; set; }
 
@@ -36,7 +38,19 @@ namespace GettingRealUI.ViewModel
 
         public string Arbejdsbeskrivelse { get; set; }
 
-        public string PrisIAlt { get; set; }
+        private double prisIAlt;
+
+        public double PrisIAlt
+        {
+            get { return prisIAlt; }
+            set
+            {
+                prisIAlt = value;
+                aftaleseddel.PrisIAlt = prisIAlt;
+                OnPropertyChanged("PrisIAlt");
+            }
+        }
+
 
         public AftaleseddelViewModel(Model.Aftaleseddel aftaleseddel)
         {
@@ -54,10 +68,30 @@ namespace GettingRealUI.ViewModel
             SvarSenest = aftaleseddel.SvarSenest;
             RefPlan = aftaleseddel.RefPlan;
             Arbejdsbeskrivelse = aftaleseddel.Arbejdsbeskrivelse;
-            PrisIAlt = aftaleseddel.PrisIAlt;
-
-           
+            prisIAlt = aftaleseddel.PrisIAlt;
         }
-    }
 
+        public void FindPrisIAlt(ObservableCollection<Arbejdsbeskrivelse> arbejdsbeskrivelses)
+        {
+            double sum = 0;
+            foreach (var item in arbejdsbeskrivelses)
+            {
+                sum += item.Sum;
+            }
+            PrisIAlt = sum;
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+
+
+        }
+
+    }
 }

@@ -127,8 +127,17 @@ namespace GettingRealUI.Model
             }
         }
 
+        private double prisIAlt;
 
-        public string PrisIAlt { get; set; }
+        public double PrisIAlt
+        {
+            get { return prisIAlt; }
+            set 
+            { 
+                prisIAlt = value;
+                OnPropertyChanged("PrisIAlt");
+            }
+        }
 
         public Aftaleseddel(int projekNr, string bygherre, string sted, string dato, int løbeNr, string projektNavn)
         {
