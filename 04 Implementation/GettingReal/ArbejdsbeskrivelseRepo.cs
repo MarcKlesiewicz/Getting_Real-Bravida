@@ -100,26 +100,9 @@ namespace GettingReal
             return tempList;
         }
 
-        public void DeaktiveretArbejdsbeskrivelse()
-        {
-            if (valgteArbejdsbeskrivelse != null)
-            {
-                valgteArbejdsbeskrivelse.Aktiveret = false;
-            }
-           
-        }
-
         public void AktiverArbejdsbeskrivelse()
         {
-            if (valgteArbejdsbeskrivelse != null)
-            {
-                if (valgteArbejdsbeskrivelse.Aktiveret != false )
-                {
-                     valgteArbejdsbeskrivelse.Aktiveret = true;
-                }
-               
-            }
-           
+            valgteArbejdsbeskrivelse.Aktiveret = valgteArbejdsbeskrivelse.Aktiveret == false ? valgteArbejdsbeskrivelse.Aktiveret = true: valgteArbejdsbeskrivelse.Aktiveret != false;
         }
 
         public string RedigerArbejdsbeskrivelse(string tekst)

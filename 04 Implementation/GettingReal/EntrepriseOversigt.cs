@@ -100,19 +100,10 @@ namespace GettingReal
             valgtAftaleseddel.Arbejdsudførelse = arbejdsUdførelse;
             valgtAftaleseddel = null;
         }
-        public void DeaktiverAftaleseddel()
-        {
-            valgtAftaleseddel.Aktiveret = false;
-        }
+       
         public void AktiverAftaleseddel()
         {
-            if (valgtAftaleseddel != null)
-            {
-                if (valgtAftaleseddel.Aktiveret == false)
-                {
-                    valgtAftaleseddel.Aktiveret = true;
-                }
-            }
+            valgtAftaleseddel.Aktiveret = valgtAftaleseddel.Aktiveret == false ? valgtAftaleseddel.Aktiveret = true : valgtAftaleseddel.Aktiveret = false;
         }
     }
 
