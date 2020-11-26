@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace GettingReal
@@ -41,15 +42,11 @@ namespace GettingReal
         }
 
         //Metode til at aktiverer den aftaleseddel der i øjeblikket arbejdes med
-        public void AktiverAftaleseddel()
+        public bool AktiverAftaleseddel()
         {
-            entrepriseOversigt.AktiverAftaleseddel();
+            return entrepriseOversigt.AktiverAftaleseddel();
         }
-        public void DeaktiverAftaleseddel()
-        {
-            entrepriseOversigt.AktiverAftaleseddel();
-        }
-        
+     
         
         public void OpretAftaleseddel()
         {
@@ -67,10 +64,10 @@ namespace GettingReal
             return entrepriseOversigt.VælgAftaleseddel(overskift);
         }
 
-        public void SletAftaleseddel(Aftaleseddel aftaleseddel)
-        {
-            entrepriseOversigt.SletAftaleseddel(aftaleseddel);
-        }
+        //public void SletAftaleseddel(Aftaleseddel aftaleseddel)
+        //{
+        //    entrepriseOversigt.SletAftaleseddel(aftaleseddel);
+        //}
 
         public void GodkendAftaleseddel()
         {
@@ -108,14 +105,9 @@ namespace GettingReal
 
         }
 
-        public void DeaktiverArbejdsbeskrivelse()
+        public void AktiverArbejdsbeskrivelse(int ID)
         {
-
-                arbejdsbeskrivelseRepo.DeaktiveretArbejdsbeskrivelse();
-        }
-        public void AktiverArbejdsbeskrivelse()
-        {
-            arbejdsbeskrivelseRepo.AktiverArbejdsbeskrivelse();
+            arbejdsbeskrivelseRepo.AktiverArbejdsbeskrivelse(ID);
         }
 
         public void RedigerArbejdsbeskrivelse(string parameter)
@@ -132,8 +124,15 @@ namespace GettingReal
         public void RedigerArbejdsbeskrivelse(double enhedsPris)
         {
             arbejdsbeskrivelseRepo.RedigerArbejdsbeskrivelse(enhedsPris);
+
+            
         }
-      
+
+        public void VælgArbejdsbeskrivelse(int v)
+        {
+           arbejdsbeskrivelseRepo.VælgArbejdsbeskrivelse(v);
+        }
+
     }
 }
 

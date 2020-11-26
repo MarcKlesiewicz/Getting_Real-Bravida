@@ -6,7 +6,8 @@ namespace GettingReal
 {
     public class Aftaleseddel
     {
-        public bool Aktiveret { get; set; } = true;
+        public bool Aktiveret { get; set; }
+
         public string Bygherre { get; set; }
 
         public int ProjektNr { get; set; }
@@ -37,6 +38,7 @@ namespace GettingReal
             Dato = dato;
             ProjektNavn = projektNavn;
             LøbeNr = løbenr;
+            Aktiveret = true;
         }
 
         public override string ToString()

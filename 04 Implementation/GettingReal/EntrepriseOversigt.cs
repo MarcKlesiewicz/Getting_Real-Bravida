@@ -101,9 +101,10 @@ namespace GettingReal
             valgtAftaleseddel = null;
         }
        
-        public void AktiverAftaleseddel()
+        public bool AktiverAftaleseddel()
         {
-            valgtAftaleseddel.Aktiveret = valgtAftaleseddel.Aktiveret == false ? valgtAftaleseddel.Aktiveret = true : valgtAftaleseddel.Aktiveret = false;
+            valgtAftaleseddel.Aktiveret = valgtAftaleseddel.Aktiveret == true ? valgtAftaleseddel.Aktiveret = false : valgtAftaleseddel.Aktiveret = true;
+            return valgtAftaleseddel.Aktiveret;
         }
     }
 

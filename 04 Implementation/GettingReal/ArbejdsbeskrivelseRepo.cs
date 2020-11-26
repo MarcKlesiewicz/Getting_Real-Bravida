@@ -12,6 +12,10 @@ namespace GettingReal
         //Det lokale field til at håndtere hvilken arbejdsbeskrivelse der i øjeblikket arbejds med
         private Arbejdsbeskrivelse valgteArbejdsbeskrivelse = null;
 
+
+        //for Units
+        private List<Arbejdsbeskrivelse> Løbenmr;
+
         //En privat metode til at finde ud af hvilket ID der ikke er taget, ud fra de allerede eksisterende arbejdsbeskrivelser
         //Hvis alle ID'er, mellem 0 til mængden af arbejdsbeskrivelser, er taget. Så returnerer den det næste frie tal.
         private int ArbejdsbeskrivelseID()
@@ -46,6 +50,10 @@ namespace GettingReal
             }
         }
 
+        public ArbejdsbeskrivelseRepo()
+        {
+           Løbenmr = new List<Arbejdsbeskrivelse>();
+        }
         //Metode til at vælge hvilken arbejdsbeskrivelse der skal arbejdes med ud fra et givent ID
         public void VælgArbejdsbeskrivelse(int iD)
         {
@@ -54,9 +62,14 @@ namespace GettingReal
                 if (iD == item.ID)
                 {
                     valgteArbejdsbeskrivelse = item;
+                    
+                    
+
                     break;
                 }
             }
+
+          
         }
 
         //Metode til at oprette en ny tom arbejdsbeskrivelse
@@ -87,22 +100,30 @@ namespace GettingReal
         //}
 
         //En metode til at finde alle de arbejdsbeskrivelser med et givent løbenummer.
+
         public List<Arbejdsbeskrivelse> FindArbejdsbeskrivelser(int løbeNr)
         {
-            List<Arbejdsbeskrivelse> tempList = new List<Arbejdsbeskrivelse>();
+            Løbenmr.Clear();
+            List<Arbejdsbeskrivelse> templist = new List<Arbejdsbeskrivelse>();
             foreach (var arbejdsbeskrivelse in _arbejdsbeskrivelser)
             {
                 if (arbejdsbeskrivelse.LøbeNr == løbeNr)
                 {
-                    tempList.Add(arbejdsbeskrivelse);
+                    Løbenmr.Add(arbejdsbeskrivelse);
+                    templist = Løbenmr;
                 }
             }
-            return tempList;
+
+
+            return templist;
+   
         }
 
-        public void AktiverArbejdsbeskrivelse()
+        public void AktiverArbejdsbeskrivelse(int ID)
         {
-            valgteArbejdsbeskrivelse.Aktiveret = valgteArbejdsbeskrivelse.Aktiveret == false ? valgteArbejdsbeskrivelse.Aktiveret = true: valgteArbejdsbeskrivelse.Aktiveret != false;
+            _arbejdsbeskrivelser[ID].Aktiveret = _arbejdsbeskrivelser[ID].Aktiveret == true
+                ? _arbejdsbeskrivelser[ID].Aktiveret = false
+                : _arbejdsbeskrivelser[ID].Aktiveret = true;
         }
 
         public string RedigerArbejdsbeskrivelse(string tekst)
