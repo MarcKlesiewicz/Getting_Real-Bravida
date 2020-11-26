@@ -104,18 +104,18 @@ namespace GettingReal
         public List<Arbejdsbeskrivelse> FindArbejdsbeskrivelser(int løbeNr)
         {
             Løbenmr.Clear();
-            List<Arbejdsbeskrivelse> templist = new List<Arbejdsbeskrivelse>();
+            
             foreach (var arbejdsbeskrivelse in _arbejdsbeskrivelser)
             {
                 if (arbejdsbeskrivelse.LøbeNr == løbeNr)
                 {
                     Løbenmr.Add(arbejdsbeskrivelse);
-                    templist = Løbenmr;
+                    
                 }
             }
 
 
-            return templist;
+            return Løbenmr;
    
         }
 
