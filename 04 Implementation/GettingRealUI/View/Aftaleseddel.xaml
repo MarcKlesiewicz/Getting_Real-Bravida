@@ -160,7 +160,7 @@
                 <ListBox x:Name="ListBoxArbejdsBeskrivelser" Grid.Row ="5" Grid.ColumnSpan="10" Grid.RowSpan="2" BorderThickness="3" ItemsSource="{Binding abvm.Arbejdsbeskrivelses}" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal" IsEnabled="{Binding Aktiv}">
+                            <StackPanel Orientation="Horizontal" IsEnabled="{Binding Aktiveret}">
                                 <TextBox Text="{Binding Tekst}" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="1000" />
                                 <TextBox Text="{Binding Antal}" FontSize="20"  BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right"  />
                                 <TextBox Text="{Binding EnhedsPris}" FontSize="20" BorderThickness="2" BorderBrush="Black" Width="280" TextAlignment="Right" />
@@ -229,7 +229,7 @@
 							</StackPanel>
 							<StackPanel Orientation="Horizontal" >
 								<!--STANDARDFORBEHOLD (MÅNED/ÅR) FOR ET ARBEJDE-->
-								<CheckBox x:Name="StandardForbehold" Margin="50,10,0,0" Checked="StandardForbehold_Checked"/>
+                                <CheckBox x:Name="StandardForbehold" Margin="50,10,0,0" Checked="StandardForbehold_Checked"/>
 								<Label x:Name="StandardForbeholdLabel" Content="STANDARDFORBEHOLD (MÅNED/ÅR) FOR ET ARBEJDE" FontSize="18" FontWeight="Bold" Foreground="Gray" />
 							</StackPanel>
                         </StackPanel>

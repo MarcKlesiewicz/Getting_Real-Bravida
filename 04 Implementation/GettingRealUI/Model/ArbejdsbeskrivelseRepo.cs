@@ -8,7 +8,7 @@ namespace GettingRealUI.Model
     public class ArbejdsbeskrivelseRepo
     {
         //Listen over alle arbejdsbeskrivelser i hele systemet
-        private ObservableCollection<Arbejdsbeskrivelse> _arbejdsbeskrivelser = new ObservableCollection<Arbejdsbeskrivelse>() { new Arbejdsbeskrivelse(0)};
+        private ObservableCollection<Arbejdsbeskrivelse> _arbejdsbeskrivelser = new ObservableCollection<Arbejdsbeskrivelse>();
 
         //Det lokale field til at håndtere hvilken arbejdsbeskrivelse der i øjeblikket arbejds med
         private Arbejdsbeskrivelse valgteArbejdsbeskrivelse = null;
@@ -105,13 +105,18 @@ namespace GettingRealUI.Model
             return tempList;
         }
 
-        public void deaktiveretArbejdsbeskrivelse()
+        public void DeaktiveretArbejdsbeskrivelse()
         {
             if (valgteArbejdsbeskrivelse != null)
             {
                 valgteArbejdsbeskrivelse.Aktiveret = false;
             }
            
+        }
+
+        public void AktiveretArbejdsbeskrivelse()
+        {
+            valgteArbejdsbeskrivelse.Aktiveret = true;
         }
 
         public string RedigerArbejdsbeskrivelse(string tekst)
@@ -145,6 +150,10 @@ namespace GettingRealUI.Model
             }
 
             return 0;
+        }
+        public void SætArbejdesbeskrivelse(Arbejdsbeskrivelse arbejdsbeskrivelse)
+        {
+            valgteArbejdsbeskrivelse = arbejdsbeskrivelse;
         }
     }
 }

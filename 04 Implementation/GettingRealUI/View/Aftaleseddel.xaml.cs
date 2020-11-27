@@ -33,16 +33,21 @@ namespace GettingRealUI.View
                 abvm = arbejdsbeskrivelseViewModel
             };
             arbejdsbeskrivelseViewModel.FindArbejsbeskrivleser(aftaleseddelViewModel.LøbeNr);
+            sætCheckBox(aftaleseddelViewModel.Prisgrundlag, aftaleseddelViewModel.Arbejdsudførelse);
         }
 
         private void btnDeaktiver_Click(object sender, RoutedEventArgs e)
         {
-
+            arbejdsbeskrivelseViewModel.SætArbejdesbeskrivelse((Model.Arbejdsbeskrivelse)ListBoxArbejdsBeskrivelser.SelectedItem);
+            arbejdsbeskrivelseViewModel.DeaktiveretArbejdsbeskrivelse();
+            aftaleseddelViewModel.FindPrisIAlt(arbejdsbeskrivelseViewModel.Arbejdsbeskrivelses);
         }
 
         private void btnAktiver_Click(object sender, RoutedEventArgs e)
         {
-
+            arbejdsbeskrivelseViewModel.SætArbejdesbeskrivelse((Model.Arbejdsbeskrivelse)ListBoxArbejdsBeskrivelser.SelectedItem);
+            arbejdsbeskrivelseViewModel.AktiverArbejdsbeskrivelse();
+            aftaleseddelViewModel.FindPrisIAlt(arbejdsbeskrivelseViewModel.Arbejdsbeskrivelses);
         }
 
         private void btnOpretAftaleseddel_Click(object sender, RoutedEventArgs e)
@@ -110,28 +115,28 @@ namespace GettingRealUI.View
         {
             if (checkbox == BygHerreØnske)
             {
-                aftaleseddelViewModel.Prisgrundlag = BygHerreønskeLabel.Content.ToString();
+                aftaleseddelViewModel.Prisgrundlag = "Bygherre";
                 EfterRegning.IsChecked = false;
                 TillægsPris.IsChecked = false;
                 ProjektÆndring.IsChecked = false;
             }
             else if (checkbox == EfterRegning)
             {
-                aftaleseddelViewModel.Prisgrundlag = EfterRegningLabel.Content.ToString();
+                aftaleseddelViewModel.Prisgrundlag = "Efter";
                 BygHerreØnske.IsChecked = false;
                 TillægsPris.IsChecked = false;
                 ProjektÆndring.IsChecked = false;
             }
             else if (checkbox == TillægsPris)
             {
-                aftaleseddelViewModel.Prisgrundlag = TillægsPrisLabel.Content.ToString();
+                aftaleseddelViewModel.Prisgrundlag = "Tillæg";
                 EfterRegning.IsChecked = false;
                 BygHerreØnske.IsChecked = false;
                 ProjektÆndring.IsChecked = false;
             }
             else if (checkbox == ProjektÆndring)
             {
-                aftaleseddelViewModel.Prisgrundlag = ProjektÆndringLabel.Content.ToString();
+                aftaleseddelViewModel.Prisgrundlag = "Projekt";
                 EfterRegning.IsChecked = false;
                 TillægsPris.IsChecked = false;
                 BygHerreØnske.IsChecked = false;
@@ -139,11 +144,46 @@ namespace GettingRealUI.View
 
         }
 
+        private void sætCheckBox(string prisgrundlag,string iHenholdTil)
+        {
+            
+            if (prisgrundlag == "Bygherre")
+            {
+                BygHerreØnske.IsChecked = true;
+            }
+            else if (prisgrundlag == "Efter")
+            {
+                EfterRegning.IsChecked = true;
+            }
+            else if (prisgrundlag == "Tilæg")
+            {
+                TillægsPris.IsChecked = true;
+            }
+            else if (prisgrundlag == "Projekt")
+            {
+                ProjektÆndring.IsChecked = true;
+            }
+
+            if (iHenholdTil == "AB")
+            {
+                AB92.IsChecked = true;
+            }
+            else if (iHenholdTil == "Standard")
+            {
+                StandardForbehold.IsChecked = true;
+            }
+            else if (iHenholdTil != null)
+            {
+                Andet.IsChecked = true;
+                AndetTextBox.Text = iHenholdTil;
+            }
+        }
+
         private void IHenholdTilCheck(CheckBox checkbox)
         {
             if (checkbox == AB92)
             {
-                aftaleseddelViewModel.Arbejdsudførelse = AB92Label.Content.ToString();
+                aftaleseddelViewModel.Arbejdsudførelse = "AB";
                 Andet.IsChecked = false;
                 StandardForbehold.IsChecked = false;
 
@@ -156,7 +196,7 @@ namespace GettingRealUI.View
             }
             else if (checkbox == StandardForbehold)
             {
-                aftaleseddelViewModel.Arbejdsudførelse = StandardForbehold.Content.ToString();
+                aftaleseddelViewModel.Arbejdsudførelse = "Standard";
                 Andet.IsChecked = false;
                 AB92.IsChecked = false;
             }

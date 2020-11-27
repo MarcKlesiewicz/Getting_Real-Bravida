@@ -26,10 +26,6 @@ namespace GettingRealUI.ViewModel
 
         public string TidsPåvirkning { get; set; }
 
-        public string Arbejdsudførelse { get; set; }
-
-        public string Prisgrundlag { get; set; }
-
         public string Overskrift { get; set; }
 
         public string SvarSenest { get; set; }
@@ -37,6 +33,32 @@ namespace GettingRealUI.ViewModel
         public string RefPlan { get; set; }
 
         public string Arbejdsbeskrivelse { get; set; }
+
+        private string arbejdsudførelse;
+
+        public string Arbejdsudførelse
+        {
+            get { return arbejdsudførelse; }
+            set
+            {
+                arbejdsudførelse = value;
+                aftaleseddel.Arbejdsudførelse = arbejdsudførelse;
+            }
+        }
+
+
+        private string prisgrundlag;
+
+        public string Prisgrundlag
+        {
+            get { return prisgrundlag; }
+            set
+            {
+                prisgrundlag = value;
+                aftaleseddel.Prisgrundlag = prisgrundlag;
+            }
+        }
+
 
         private double prisIAlt;
 
@@ -76,7 +98,10 @@ namespace GettingRealUI.ViewModel
             double sum = 0;
             foreach (var item in arbejdsbeskrivelses)
             {
-                sum += item.Sum;
+                if (item.Aktiveret)
+                {
+                    sum += item.Sum;
+                }
             }
             PrisIAlt = sum;
         }

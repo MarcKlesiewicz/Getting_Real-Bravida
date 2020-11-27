@@ -27,5 +27,18 @@ namespace GettingRealUI.ViewModel
             arbejdsbeskrivelseRepo.TilføjLøbenummer(løbeNr);
             Arbejdsbeskrivelses.Add(temp);
         }
+
+        public void AktiverArbejdsbeskrivelse()
+        {
+            arbejdsbeskrivelseRepo.AktiveretArbejdsbeskrivelse();
+        }
+        public void DeaktiveretArbejdsbeskrivelse()
+        {
+            arbejdsbeskrivelseRepo.DeaktiveretArbejdsbeskrivelse();
+        }
+        public void SætArbejdesbeskrivelse(Arbejdsbeskrivelse arbejdsbeskrivelse)
+        {
+            arbejdsbeskrivelseRepo.SætArbejdesbeskrivelse(arbejdsbeskrivelse);
+        }
     }
 }

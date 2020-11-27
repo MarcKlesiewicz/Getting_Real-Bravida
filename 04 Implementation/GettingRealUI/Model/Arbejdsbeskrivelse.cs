@@ -36,7 +36,11 @@ namespace GettingRealUI.Model
         public bool Aktiveret
         {
             get { return _aktiveret; }
-            set { _aktiveret = value; }
+            set 
+            { 
+                _aktiveret = value;
+                OnPropertyChanged("Aktiveret");
+            }
         }
 
         public double Sum
