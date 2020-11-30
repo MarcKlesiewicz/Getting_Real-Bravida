@@ -85,6 +85,7 @@ namespace GettingRealUI.ViewModel
             ProjektNavn = aftaleseddel.ProjektNavn;
             Modtager = aftaleseddel.Modtager;
             TidsPåvirkning = aftaleseddel.TidsPåvirkning;
+            Arbejdsudførelse = aftaleseddel.Arbejdsudførelse;
             Prisgrundlag = aftaleseddel.Prisgrundlag;
             Overskrift = aftaleseddel.Overskrift;
             SvarSenest = aftaleseddel.SvarSenest;

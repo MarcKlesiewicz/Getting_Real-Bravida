@@ -155,7 +155,7 @@ namespace GettingRealUI.View
             {
                 EfterRegning.IsChecked = true;
             }
-            else if (prisgrundlag == "Tilæg")
+            else if (prisgrundlag == "Tillæg")
             {
                 TillægsPris.IsChecked = true;
             }
