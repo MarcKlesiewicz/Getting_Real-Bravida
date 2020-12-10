@@ -7,17 +7,17 @@ namespace GettingRealUI.Model
 {
     public class Aftaleseddel : INotifyPropertyChanged
     {
-        public string Bygherre { get; set; } = "hej";
+        public string Bygherre { get; set; }
 
-        public int ProjektNr { get; set; } = 1;
+        public int ProjektNr { get; set; } 
 
-        public string Sted { get; set; } = "hej";
+        public string Sted { get; set; }
 
-        public int LøbeNr { get; set; } = 2;
+        public int LøbeNr { get; set; }
 
-        public string Dato { get; set; } = "hej";
+        public string Dato { get; set; }
 
-        public string ProjektNavn { get; set; } = "hej";
+        public string ProjektNavn { get; set; }
 
         private string modtager;
 

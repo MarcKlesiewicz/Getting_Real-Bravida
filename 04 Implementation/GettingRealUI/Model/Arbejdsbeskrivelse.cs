@@ -11,7 +11,7 @@ namespace GettingRealUI.Model
         private int _iD;
 
         //Field for løbenummeret til hver arbejdsbeskrivelse. Arbejdsbeskrivelse objekter KAN GODT have det samme løbenummer.
-        private int _løbeNr = 1;
+        private int _løbeNr;
 
         //Field for teksten i arbejdsbeskrivelsens indhold
         private string _tekst;
@@ -20,7 +20,7 @@ namespace GettingRealUI.Model
         private int _antal;
 
         //Field for enhedsprisen i arbejdsbeskrivelsens indhold
-        private double _enhedsPris = 4;
+        private double _enhedsPris;
 
         //Field for summen af alle enhedspriserne i arbejdsbeskrivelsens indhold
         private double _sum;

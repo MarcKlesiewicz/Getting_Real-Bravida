@@ -70,11 +70,11 @@ namespace GettingRealUI.Model
 
         public int LøbeNr { get; set; } = 1;
 
-        public string Dato { get; set; } = "1/1";
+        public string Dato { get; set; }
 
         public string Oprettelse { get; set; }
 
-        private ObservableCollection<Aftaleseddel> aftaleseddeler = new ObservableCollection<Aftaleseddel>() { new Aftaleseddel(2, "dan", "odense", "21/21", 1, "hallo"), new Aftaleseddel(2, "dan", "odense", "21/21", 2, "hallo") };
+        private ObservableCollection<Aftaleseddel> aftaleseddeler = new ObservableCollection<Aftaleseddel>();
 
         public Aftaleseddel valgtAftaleseddel { get; private set; }
 
